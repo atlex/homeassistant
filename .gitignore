@@ -1,0 +1,7 @@
+secrets.yaml
+.sonoff.json
+webostv.conf
+*.db
+*.log
+*.jpg
+*.mp4
