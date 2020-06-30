@@ -1,0 +1,24 @@
+- id: alex_phone_home
+  alias: alex_phone_home
+  trigger:
+    platform: state
+    entity_id: device_tracker.sm_g965f_2
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: notify.Telegram
+    data_template:
+        message: "Alex phone is {{ states('device_tracker.sm_g965f_2') }}."
+
+- id: alex_phone_not_home
+  alias: alex_phone_not_home
+  trigger:
+    platform: state
+    entity_id: device_tracker.sm_g965f_2
+    from: 'home'
+    to: 'not_home'
+  action:
+    service: notify.Telegram
+    data_template:
+        message: "Alex phone is {{ states('device_tracker.sm_g965f_2') }}."
+     

@@ -1,0 +1,22 @@
+- id: bedroom_hum_above
+  alias: bedroom_hum_above
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.humidity_158d00019d3869
+    above: 70
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "Bedroom humidity is {{ states('sensor.humidity_158d00019d3869') }}%."
+
+- id: bedroom_temp_below
+  alias: bedroom_temp_below
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.temperature_158d00019d3869
+    below: 20
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "Bedroom temperature is {{ states('sensor.temperature_158d00019d3869') }}%."
+      

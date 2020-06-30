@@ -1,0 +1,33 @@
+# - id: front_door_sensor
+#   alias: front_door_sensor
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.door_window_sensor_158d0001b7585e
+#     from: "off"
+#     to: "on"
+#   action:
+#     service: notify.Telegram
+#     data_template:
+#       message: "Front door is {{ states('binary_sensor.door_window_sensor_158d0001b7585e') }}."
+      
+- id: livingroom_hum_above
+  alias: livingroom_hum_above
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.mi_h_3f59c880c04e
+    above: 70
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "Livingroom humidity is {{ states('sensor.humidity_158d00019d37b4') }}%."
+
+- id: livingroom_temp_below
+  alias: livingroom_temp_below
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.mi_t_3f59c880c04e
+    below: 21
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "Livingroom temperature is {{ states('sensor.temperature_158d00019d37b4') }}%."

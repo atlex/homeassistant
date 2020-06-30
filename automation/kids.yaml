@@ -1,0 +1,118 @@
+# Humidity above
+- id: kids_hum_above
+  alias: kids_hum_above
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.humidity_158d00019f8776
+    above: 70
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "Kids humidity is {{ states('sensor.humidity_158d00019f8776') }}%."
+
+# Temp below
+- id: kids_temp_below
+  alias: kids_temp_below
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.temperature_158d00019f8776
+    below: 22
+  action:
+#   - service: notify.Telegram
+#     data_template:
+#     message: "Kids temperature is {{ states('sensor.temperature_158d00019f8776') }}%."
+  - service: camera.record
+    data:
+      entity_id: camera.reokids_2
+      filename: "/config/www/cam_captures/reokids.mp4"
+      duration: 10
+  - delay: 00:00:20      
+  - service: notify.Telegram
+    data:
+      message: "Video"
+      data:
+        video:
+        - file: "/config/www/cam_captures/reokids.mp4"
+          caption: "Kids temperature is {{ states('sensor.temperature_158d00019f8776') }}%."
+
+      
+# # Light Bright On
+# - id: kids_left_button_on
+#   alias: kids_left_button_on
+#   trigger:
+#   - platform: event
+#     event_type: xiaomi_aqara.click
+#     event_data:
+#       entity_id: binary_sensor.wall_switch_left_158d0001640452
+#       click_type: single
+#   - platform: template
+#     value_template: '{{ states.light.xiaomi_philips_ceiling_led.attributes.scene | int != 1 }}'    
+#   action:
+#   - service: xiaomi_miio.light_set_scene
+#     entity_id: light.xiaomi_philips_ceiling_led
+#     data:
+#       scene: 1
+    
+# # Light Bright Off
+# - id: kids_left_button_off
+#   alias: kids_left_button_off
+#   trigger:
+#   - platform: event
+#     event_type: xiaomi_aqara.click
+#     event_data:
+#       entity_id: binary_sensor.wall_switch_left_158d0001640452
+#       click_type: single
+#   condition:
+#     - condition: state
+#       entity_id: light.xiaomi_philips_ceiling_led
+#       state: 'on'      
+#   action:
+#   - service: light.turn_off
+#     entity_id: light.xiaomi_philips_ceiling_led
+
+# # Light Warm On
+# - id: kids_right_button_warm
+#   alias: kids_right_button_warm
+#   trigger:
+#   - platform: event
+#     event_type: xiaomi_aqara.click
+#     event_data:
+#       entity_id: binary_sensor.wall_switch_right_158d0001640452
+#       click_type: single
+#   action:
+#   - service: xiaomi_miio.light_set_scene
+#     entity_id: light.xiaomi_philips_ceiling_led
+#     data:
+#       scene: 3
+      
+    
+# Light Bright
+- id: kids_right_button_light_bright
+  alias: kids_right_button_light_bright
+  trigger:
+  - event_data:
+      click_type: single
+      entity_id: binary_sensor.wall_switch_right_158d0001640452
+    event_type: xiaomi_aqara.click
+    platform: event
+  action:
+  - data:
+      scene: 1
+    entity_id: light.xiaomi_philips_ceiling_led
+    service: xiaomi_miio.light_set_scene
+
+# Light Warm
+- id: kids_both_buttons_light_warm
+  alias: kids_both_buttons_light_warm
+  trigger:
+  - event_data:
+      click_type: both
+      entity_id: binary_sensor.wall_switch_both_158d0001640452
+    event_type: xiaomi_aqara.click
+    platform: event
+  action:
+  - data:
+      scene: 3
+    entity_id: light.xiaomi_philips_ceiling_led
+    service: xiaomi_miio.light_set_scene
+    

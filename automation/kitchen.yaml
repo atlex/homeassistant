@@ -1,0 +1,79 @@
+- id: kitchen_hum_above
+  alias: kitchen_hum_above
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.humidity_158d00019d37b4
+    above: 70
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "Kitchen humidity is {{ states('sensor.humidity_158d00019d37b4') }}%."
+
+- id: kitchen_temp_below
+  alias: kitchen_temp_below
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.temperature_158d00019d37b4
+    below: 20
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "Kitchen temperature is {{ states('sensor.temperature_158d00019d37b4') }}%."
+      
+- id: kitchen_fridge_off
+  alias: kitchen_fridge_off
+  trigger:
+    platform: state
+    entity_id: switch.641880212cf432c9d15c_2
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "Fridge is {{ states('switch.641880212cf432c9d15c_2') }}."
+ 
+# YI 720p Photo      
+# - id: kitchen_yi720_photo
+#   alias: kitchen_yi720_photo
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.door_window_sensor_158d0001b7585e
+#     from: "off"
+#     to: "on"
+#   action:
+#   - service: camera.snapshot
+#     data:
+#       entity_id: camera.yi720hd
+#       filename: "/config/www/cam_captures/yi720hd.jpg"
+#   - delay: 00:00:05      
+#   - service: notify.Telegram
+#     data:
+#       title: Photo
+#       message: "Фото"
+#       data:
+#         photo:
+#           - file: "/config/www/cam_captures/yi720hd.jpg"
+#             #caption: "Фото {{ states('sensor.date_time') }}"
+            
+# YI 720p Video      
+- id: kitchen_yi720_video
+  alias: kitchen_yi720_video
+  trigger:
+    platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0001b7585e
+    from: "off"
+    to: "on"
+  action:
+  - service: camera.record
+    data:
+      entity_id: camera.yi720hd
+      filename: "/config/www/cam_captures/yi720hd.mp4"
+      duration: 10
+  - delay: 00:00:20      
+  - service: notify.Telegram
+    data:
+      title: Video
+      message: "Видео"
+      data:
+        video:
+          - file: "/config/www/cam_captures/yi720hd.mp4"
+            caption: "Front door is opened."
+          

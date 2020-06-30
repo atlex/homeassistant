@@ -1,0 +1,54 @@
+- id: bathroom_hum_above
+  alias: bathroom_hum_above
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.humidity_158d0001b8cd45
+    above: 70
+  action:
+    - service: switch.turn_on
+      entity_id: switch.sonoff_1000b6d861
+    - delay: 00:00:03
+    - service: notify.Telegram
+      data_template:
+        message: "Bathroom humidity is {{ states('sensor.humidity_158d0001b8cd45') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
+
+- id: bathroom_hum_below
+  alias: bathroom_hum_below
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.humidity_158d0001b8cd45
+    below: 65
+  action:
+    - service: switch.turn_off
+      entity_id: switch.sonoff_1000b6d861
+    - delay: 00:00:03
+    - service: notify.Telegram
+      data_template:
+        message: "Bathroom humidity is {{ states('sensor.humidity_158d0001b8cd45') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
+
+# - id: bathroom_fan_state
+#   alias: bathroom_fan_state
+#   trigger:
+#     - platform: state
+#       entity_id: switch.sonoff_1000b6d861
+#   action:
+#     - service: notify.Telegram
+#       data_template:
+#         message: "Bathroom Fan is {{ states('switch.sonoff_1000b6d861') }}."
+            
+- id: bathroom_fan_button
+  alias: bathroom_fan_button
+  trigger:
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_158d0001b195a0
+      click_type: single
+  action:
+    - service: switch.toggle
+      entity_id: switch.sonoff_1000b6d861
+    - delay: 00:00:03
+    - service: notify.Telegram
+      data_template:
+        message: "Bathroom Fan is {{ states('switch.sonoff_1000b6d861') }}."
+

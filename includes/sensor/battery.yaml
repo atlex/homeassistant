@@ -1,0 +1,74 @@
+  
+  - platform: template
+    sensors:
+     158d0001b91127_battery:
+       value_template: "{{ state_attr('sensor.temperature_158d0001b91127', 'battery_level') }}"
+       unit_of_measurement: '%'
+       entity_id: sensor.temperature_158d0001b91127
+       device_class: battery
+       friendly_name: 'Street Temperature battery'
+       
+  - platform: template
+    sensors:
+     158d00019f8776_battery:
+       value_template: "{{ state_attr('sensor.temperature_158d00019f8776', 'battery_level') }}"
+       unit_of_measurement: '%'
+       entity_id: sensor.temperature_158d00019f8776
+       device_class: battery
+       friendly_name: 'Kids Temperature battery'
+       
+  - platform: template
+    sensors:
+     158d00019d3869_battery:
+       value_template: "{{ state_attr('sensor.temperature_158d00019d3869', 'battery_level') }}"
+       unit_of_measurement: '%'
+       entity_id: sensor.temperature_158d00019d3869
+       device_class: battery
+       friendly_name: 'Bedroom Temperature battery'
+       
+  - platform: template
+    sensors:
+     158d00019d37b4_battery:
+       value_template: "{{ state_attr('sensor.temperature_158d00019d37b4', 'battery_level') }}"
+       unit_of_measurement: '%'
+       entity_id: sensor.temperature_158d00019d37b4
+       device_class: battery
+       friendly_name: 'Kitchen Temperature battery'
+       
+  - platform: template
+    sensors:
+     158d0001b8cd45_battery:
+       value_template: "{{ state_attr('sensor.temperature_158d0001b8cd45', 'battery_level') }}"
+       unit_of_measurement: '%'
+       entity_id: sensor.temperature_158d0001b8cd45
+       device_class: battery
+       friendly_name: 'Bathroom Temperature battery'
+       
+  - platform: template
+    sensors:
+     158d0001640452_battery:
+      value_template: "{{ state_attr('binary_sensor.wall_switch_both_158d0001640452', 'battery_level') }}"
+      unit_of_measurement: '%'
+      entity_id: binary_sensor.wall_switch_both_158d0001640452
+      device_class: battery
+      friendly_name: 'Kids Switch battery'
+       
+  - platform: template
+    sensors:
+     158d0001b7585e_battery:
+      value_template: "{{ state_attr('binary_sensor.door_window_sensor_158d0001b7585e', 'battery_level') }}"
+      unit_of_measurement: '%'
+      entity_id: binary_sensor.door_window_sensor_158d0001b7585e
+      device_class: battery
+      friendly_name: 'Front Door Sensor battery'
+      
+  - platform: template
+    sensors:
+     158d0001b195a0_battery:
+      value_template: "{{ state_attr('binary_sensor.switch_158d0001b195a0', 'battery_level') }}"
+      unit_of_measurement: '%'
+      entity_id: binary_sensor.switch_158d0001b195a0
+      device_class: battery
+      friendly_name: 'Bathroom Fan button  battery'
+      
+      

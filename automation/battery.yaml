@@ -1,0 +1,11 @@
+- id: battery_level_below
+  alias: battery_level_below
+  trigger:
+    platform: numeric_state
+    below: 20
+    entity_id: sensor.158d0001b91127_battery
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "Level of {{ state_attr('sensor.158d0001b91127_battery', 'friendly_name') }} is {{ states('sensor.158d0001b91127_battery') }}%."
+      

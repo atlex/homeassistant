@@ -1,0 +1,94 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+homeassistant:
+  elevation: 250
+  unit_system: metric
+  time_zone: Europe/Minsk
+  external_url: !secret duckdns_url
+  internal_url: http://192.168.1.30:8123
+  customize: !include customize.yaml
+  
+zone:
+  - name: Home
+    latitude: !secret latitude_coord
+    longitude: !secret longitude_coord
+    radius: 10
+    icon: mdi:home
+
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+group: !include groups.yaml
+automation: !include_dir_merge_list automation
+script: !include scripts.yaml
+scene: !include scenes.yaml
+sensor: !include_dir_merge_list includes/sensor
+camera: !include includes/cameras.yaml
+
+
+# Xiaomi gateway
+xiaomi_aqara:
+  discovery_retry: 10
+  gateways:
+    - mac: 34ce008141db
+      key: !secret gateway1_key
+
+# Xiaomi Philips Ceiling LED
+light:
+  - platform: xiaomi_miio
+    name: Xiaomi Philips Ceiling LED
+    host: 192.168.1.10
+    token: !secret xiaomi_philips_ceiling_led_token
+    model: philips.light.ceiling
+
+# Xiaomi zimi powerstrip
+switch:
+  - platform: xiaomi_miio
+    host: 192.168.1.18
+    token: !secret xiaomi_zimi_powerstrip_token
+    model: zimi.powerstrip.v2
+    
+# Tuya BlitzWolf smart life   
+tuya:
+  username: !secret tuya_username
+  password: !secret tuya_password
+  country_code: 375
+  platform: smart_life
+  
+# Telegram
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      - !secret telegram_chat_id_alex
+
+notify: 
+  - platform: telegram
+    name: Telegram
+    chat_id: !secret telegram_chat_id_alex
+    
+  - platform: webostv
+    name: LG TV
+    host: 192.168.1.11
+    filename: webostv.conf
+
+# LG TV
+webostv:
+  host: 192.168.1.11
+  name: LG TV
+
+# Sonoff
+sonoff:
+  username: !secret sonoff_username
+  password: !secret sonoff_password
+  #reload: always
+  
+# Speedtest  
+speedtestdotnet:
+  scan_interval: '01:00:00'
+  monitored_conditions:
+    - ping
+    - download
+    - upload
