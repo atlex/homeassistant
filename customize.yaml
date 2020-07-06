@@ -1,3 +1,4 @@
+# Xiaomi Aqara Gateway
 sensor.humidity_158d0001b8cd45:
   friendly_name: Bathroom Humidity
   device_class: humidity
