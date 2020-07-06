@@ -5,3 +5,4 @@ webostv.conf
 *.log
 *.jpg
 *.mp4
+.storage/
