@@ -73,6 +73,16 @@ webostv:
       broadcast_address: 192.168.1.255
       broadcast_port: 9
 
+samsungtv:
+  host: 192.168.1.7
+  name: Samsung TV
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: 04:20:9A:28:11:FB 
+      broadcast_address: 192.168.1.255
+      broadcast_port: 9
+
 # Sonoff
 # sonoff:
 #   username: !secret sonoff_username

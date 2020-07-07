@@ -1,0 +1,13 @@
+title: Bedroom
+path: bedroom
+icon: mdi:bed-empty
+cards:
+  # Bedroom Temp
+  - type: sensor
+    entity: sensor.temperature_158d00019d3869
+    graph: line
+    
+  # Bedroom Humidity    
+  - type: sensor
+    entity: sensor.humidity_158d00019d3869
+    graph: line

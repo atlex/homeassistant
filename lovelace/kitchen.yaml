@@ -1,0 +1,28 @@
+title: Kitchen
+path: kitchen
+icon: mdi:fridge-outline
+cards:
+  # Temp
+  - type: sensor
+    entity: sensor.temperature_158d00019d37b4
+    graph: line
+
+  # Hum
+  - type: sensor
+    entity: sensor.humidity_158d00019d37b4
+    graph: line
+
+  # Switches
+  - type: entities  
+    entities:
+    - entity: switch.44533331dc4f22f0d71c
+    - entity: switch.81353660600194c84e46
+    - entity: switch.plug_158d00010dec94
+    - entity: switch.641880212cf432c9d15c_1
+    - entity: switch.641880212cf432c9d15c_2
+    show_header_toggle: false
+
+
+
+
+

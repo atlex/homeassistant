@@ -1,6 +1,7 @@
 title: Home
 path: default_view
-# badges:
+icon: mdi:home
+badges:
 #   - entity: binary_sensor.updater
 #   - entity: binary_sensor.door_window_sensor_158d0001b7585e
 #   - entity: binary_sensor.wall_switch_left_158d0001640452
@@ -8,7 +9,7 @@ path: default_view
 #   - entity: binary_sensor.wall_switch_both_158d0001640452
 #   - entity: binary_sensor.motion_sensor_158d0001db08c5
 #   - entity: binary_sensor.switch_158d0001b195a0
-#   - entity: person.alex
+   - entity: person.alex
 #   - entity: sensor.158d0001b91127_battery
 #   - entity: sensor.158d00019f8776_battery
 #   - entity: sensor.158d00019d3869_battery
@@ -39,7 +40,7 @@ path: default_view
 #   - entity: sensor.speedtest_ping
 #   - entity: sensor.speedtest_download
 #   - entity: sensor.speedtest_upload
-#   - entity: sun.sun
+   - entity: sun.sun
 cards:
   - type: entities
     entities:
@@ -56,16 +57,6 @@ cards:
     title: Living Room
   - type: alarm-panel
     entity: alarm_control_panel.xiaomi_miio_gateway_alarm
-#   - type: picture-entity
-#     entity: camera.dafangstreetffmpeg
-#   - type: picture-entity
-#     entity: camera.reokids_profile000_mainstream
-#   - type: picture-entity
-#     entity: camera.reokids_profile001_substream
-#   - type: picture-entity
-#     entity: camera.yi720hd
-#   - type: picture-entity
-#     entity: camera.yi720sd
   - type: entities
     entities:
       - light.xiaomi_philips_ceiling_led
@@ -74,7 +65,7 @@ cards:
     entity: media_player.lg_tv
   - type: entities
     entities:
-      - switch.plug_158d00010dec94
+      #- switch.plug_158d00010dec94
       - switch.xiaomi_miio_switch
     title: Switch
   - type: weather-forecast

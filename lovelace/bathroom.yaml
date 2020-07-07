@@ -1,0 +1,24 @@
+title: Bathroom
+path: bathroom
+icon: mdi:shower-head
+cards:
+  # Temp
+  - type: sensor
+    entity: sensor.temperature_158d0001b8cd45
+    graph: line
+
+  # Hum
+  - type: sensor
+    entity: sensor.humidity_158d0001b8cd45
+    graph: line
+  
+  # Sonoff
+#   - type: button   
+#     entity: switch.sonoff_1000b6d861
+
+  #Tuya Washmachine
+  - type: button
+    entity: switch.36007448840d8e799d98
+
+
+

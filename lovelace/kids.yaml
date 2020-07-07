@@ -1,5 +1,6 @@
 title: Kids
 path: kids
+icon: mdi:baby-carriage
 cards:
   # Kids Temp
   - type: sensor

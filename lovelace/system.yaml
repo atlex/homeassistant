@@ -1,0 +1,44 @@
+title: System
+path: system
+icon: mdi:laptop
+cards:
+  # Power
+  - type: entities
+    entities:
+    - entity: sensor.158d00010dec94_load
+
+  # Batteries
+  - type: entities
+    entities:
+    - entity: sensor.158d0001b91127_battery
+    - entity: sensor.158d00019f8776_battery
+    - entity: sensor.158d00019d3869_battery
+    - entity: sensor.158d00019d37b4_battery
+    - entity: sensor.158d0001b8cd45_battery
+    - entity: sensor.158d0001640452_battery
+    - entity: sensor.158d0001b7585e_battery
+    - entity: sensor.158d0001b195a0_battery
+  
+  # Usage  
+  - type: gauge 
+    entity: sensor.processor_use
+    max: 100
+    min: 0
+  
+  - type: gauge 
+    entity: sensor.memory_use_percent
+    max: 100
+    min: 0
+    
+  - type: gauge 
+    entity: sensor.disk_free
+    max: 100
+    min: 0
+
+  # Speedtest
+  - type: history-graph
+    entities:
+    - entity: sensor.speedtest_download
+    - entity: sensor.speedtest_upload
+
+    

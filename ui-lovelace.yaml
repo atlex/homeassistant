@@ -2,5 +2,9 @@ title: HomeRPI4
 views:
   - !include lovelace/home.yaml
   - !include lovelace/kids.yaml
+  - !include lovelace/bathroom.yaml
+  - !include lovelace/bedroom.yaml
+  - !include lovelace/kitchen.yaml
   - !include lovelace/cams.yaml
+  - !include lovelace/system.yaml
   
