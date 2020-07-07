@@ -25,6 +25,9 @@ scene: !include scenes.yaml
 sensor: !include_dir_merge_list includes/sensor
 camera: !include includes/cameras.yaml
 
+lovelace:
+  mode: yaml
+
 # Xiaomi Philips Ceiling LED
 light:
   - platform: xiaomi_miio

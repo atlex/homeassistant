@@ -1,0 +1,6 @@
+title: HomeRPI4
+views:
+  - !include lovelace/home.yaml
+  - !include lovelace/kids.yaml
+  - !include lovelace/cams.yaml
+  

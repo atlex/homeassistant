@@ -1,0 +1,28 @@
+title: Cams
+path: cams
+icon: mdi:webcam
+cards:
+  # Kids Main 
+  - type: entities
+    entities:
+    - entity: camera.reokids_profile000_mainstream
+  # Kids Sub     
+  - type: picture-entity
+    entity: camera.reokids_profile001_substream
+    aspect_ratio: 50%
+    
+  # Street
+  - type: picture-entity
+    entity: camera.dafangstreetffmpeg
+    aspect_ratio: 50%
+    
+  # Kitchen HD
+  - type: entities
+    entities:
+    - entity: camera.yi720hd
+  # Kitchen SD
+  - type: picture-entity
+    entity: camera.yi720sd
+    aspect_ratio: 50%
+
+    

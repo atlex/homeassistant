@@ -1,0 +1,18 @@
+title: Kids
+path: kids
+cards:
+  # Kids Temp
+  - type: sensor
+    entity: sensor.temperature_158d00019f8776
+    graph: line
+    
+  # Kids Humidity    
+  - type: sensor
+    entity: sensor.humidity_158d00019f8776
+    graph: line
+    
+  # Kids ceiling light    
+  - type: light
+    entity: light.xiaomi_philips_ceiling_led
+    icon: 'mdi:ceiling-light'
+    
