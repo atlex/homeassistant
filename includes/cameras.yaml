@@ -17,35 +17,35 @@
 #     input: rtsp://192.168.1.6:554/ch3.h264
     
 # Xiaomi Dafang
-  - platform: generic
-    name: dafangStreetGeneric
-    username: !secret dafangStreet_username
-    password: !secret dafangStreet_username
-    authentication: basic
-    still_image_url: https://192.168.1.13/cgi-bin/currentpic.cgi
-    verify_ssl: false
-    scan_interval: 5
+#   - platform: generic
+#     name: dafangStreetGeneric
+#     username: !secret dafangStreet_username
+#     password: !secret dafangStreet_username
+#     authentication: basic
+#     still_image_url: https://192.168.1.13/cgi-bin/currentpic.cgi
+#     verify_ssl: false
+#     scan_interval: 5
     
   - platform: ffmpeg
     name: dafangStreetFFmpeg
     input: -rtsp_transport tcp -i rtsp://192.168.1.13:8554/unicast
 
-# Reolink E1 Pro
-  - platform: onvif
-    name: reoKids
-    host: !secret reoKids_host
-    profile: 0 #first profile - highest quality
-    port: 8000
-    username: !secret reoKids_username
-    password: !secret reoKids_password
-# Reolink E1 Pro Sub
-  - platform: onvif
-    name: reoKidsSub
-    host: !secret reoKids_host
-    profile: 1 #second profile - low quality
-    port: 8000
-    username: !secret reoKids_username
-    password: !secret reoKids_password    
+# # Reolink E1 Pro
+#   - platform: onvif
+#     name: reoKids
+#     host: !secret reoKids_host
+#     profile: 0 #first profile - highest quality
+#     port: 8000
+#     username: !secret reoKids_username
+#     password: !secret reoKids_password
+# # Reolink E1 Pro Sub
+#   - platform: onvif
+#     name: reoKidsSub
+#     host: !secret reoKids_host
+#     profile: 1 #second profile - low quality
+#     port: 8000
+#     username: !secret reoKids_username
+#     password: !secret reoKids_password    
 
 
   

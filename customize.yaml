@@ -50,12 +50,23 @@ binary_sensor.motion_sensor_158d0001db08c5:
   
 binary_sensor.wall_switch_left_158d0001640452:
   friendly_name: Kids Wall Switch - Left
+  icon: mdi:light-switch
 binary_sensor.wall_switch_right_158d0001640452:
   friendly_name: Kids Wall Switch - Right
+  icon: mdi:light-switch
 binary_sensor.wall_switch_both_158d0001640452:
   friendly_name: Kids Wall Switch - Both
+  icon: mdi:light-switch
+    
+switch.plug_158d00010dec94:
+  friendly_name: Dishwasher plug
+  icon: mdi:dishwasher
 
-# 
+# Xiaomi Miio Gateway
+switch.xiaomi_miio_switch:
+  friendly_name: Xiaomi Zimi Powerstrip
+
+# Xiaomi BLE Monitor sensor LYWSD02
 sensor.mi_h_3f59c880c04e:
   friendly_name: Livingroom Humidity
   device_class: humidity
@@ -63,9 +74,7 @@ sensor.mi_t_3f59c880c04e:
   friendly_name: Livingroom Temperature
   device_class: temperature
 
-switch.xiaomi_miio_switch:
-  friendly_name: Xiaomi Zimi Powerstrip
-
+# 
 device_tracker.sm_g965f_2:
   friendly_name: S9+
 
@@ -82,8 +91,6 @@ switch.44533331dc4f22f0d71c:
   icon: mdi:kettle
 switch.641880212cf432c9d15c_2:
   icon: mdi:fridge
-switch.plug_158d00010dec94:
-  icon: mdi:dishwasher
 switch.641880212cf432c9d15c_1:
   icon: mdi:toaster-oven
 switch.81353660600194c84e46:
@@ -94,3 +101,24 @@ switch.36007448840d8e799d98:
 # COVID
 sensor.belarus_coronavirus_deaths:
   friendly_name: умерло
+
+# Reolink
+camera.reokids_profile000_mainstream:
+  friendly_name: reoKidsMain
+  icon: mdi:webcam
+camera.reokids_profile001_substream:
+  friendly_name: reoKidsSub
+  icon: mdi:webcam
+  
+# Speedtest
+sensor.speedtest_download:
+  friendly_name: Download
+sensor.speedtest_upload:
+  friendly_name: Upload
+sensor.speedtest_ping:
+  friendly_name: Ping
+  
+  
+  
+  
+  
