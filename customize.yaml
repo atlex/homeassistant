@@ -19,6 +19,13 @@ sensor.humidity_158d0001b8cd45:
 sensor.temperature_158d0001b8cd45:
   friendly_name: Bathroom Temperature
   device_class: temperature
+  
+sensor.humidity_158d00040e1461:
+  friendly_name: Bathroom2 Humidity
+  device_class: humidity
+sensor.temperature_158d00040e1461:
+  friendly_name: Bathroom2 Temperature
+  device_class: temperature
 
 sensor.humidity_158d00019d3869:
   friendly_name: Bedroom Humidity

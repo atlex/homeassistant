@@ -11,6 +11,16 @@ cards:
   - type: sensor
     entity: sensor.humidity_158d0001b8cd45
     graph: line
+    
+  # Temp2
+  - type: sensor
+    entity: sensor.temperature_158d00040e1461
+    graph: line
+
+  # Hum2
+  - type: sensor
+    entity: sensor.humidity_158d00040e1461
+    graph: line
   
   # Sonoff
 #   - type: button   
