@@ -125,6 +125,15 @@ sensor.speedtest_upload:
 sensor.speedtest_ping:
   friendly_name: Ping
   
+# Router
+sensor.rt_ac68u_kib_s_received:
+  friendly_name: Received kb/s
+sensor.rt_ac68u_kib_s_sent:
+  friendly_name: Sent kb/s
+sensor.rt_ac68u_b_received:
+  friendly_name: Received
+sensor.rt_ac68u_b_sent:  
+  friendly_name: Sent
   
   
   

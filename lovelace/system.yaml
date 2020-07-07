@@ -41,4 +41,24 @@ cards:
     - entity: sensor.speedtest_download
     - entity: sensor.speedtest_upload
 
+  # Router
+  - type: entities
+    entities:
+    #- entity: sensor.rt_ac68u_packets_received
+    #- entity: sensor.rt_ac68u_packets_sent
+    - entity: sensor.rt_ac68u_kib_s_received
+    - entity: sensor.rt_ac68u_kib_s_sent
+    #- entity: sensor.rt_ac68u_packets_s_received
+    #- entity: sensor.rt_ac68u_packets_s_sent
+    - entity: sensor.rt_ac68u_b_received
+    - entity: sensor.rt_ac68u_b_sent
     
+  - type: history-graph
+    entities:
+    - entity: sensor.rt_ac68u_kib_s_received
+    - entity: sensor.rt_ac68u_kib_s_sent
+
+  - type: history-graph
+    entities:
+    - entity: sensor.rt_ac68u_b_received
+    - entity: sensor.rt_ac68u_b_sent
