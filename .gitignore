@@ -2,6 +2,9 @@ secrets.yaml
 .sonoff.json
 webostv.conf
 *.db
+*.db-shm
+*.db-wal
 *.log
 *.jpg
 *.mp4
+.storage

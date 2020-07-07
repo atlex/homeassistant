@@ -55,7 +55,7 @@ binary_sensor.wall_switch_right_158d0001640452:
 binary_sensor.wall_switch_both_158d0001640452:
   friendly_name: Kids Wall Switch - Both
 
-# 
+# Xiaomi BLE Monitor sensor LYWSD02
 sensor.mi_h_3f59c880c04e:
   friendly_name: Livingroom Humidity
   device_class: humidity
