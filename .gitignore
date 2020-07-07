@@ -8,3 +8,4 @@ webostv.conf
 *.jpg
 *.mp4
 .storage
+__pycache__
