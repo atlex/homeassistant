@@ -11,3 +11,11 @@ cards:
   - type: sensor
     entity: sensor.humidity_158d00019d3869
     graph: line
+    
+  # Bedroom Motion 
+  - type: history-graph
+    title: motion
+    entities:
+    - entity: binary_sensor.motion_sensor_158d0001db08c5
+
+

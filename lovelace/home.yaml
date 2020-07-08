@@ -1,9 +1,6 @@
 title: Home
 path: default_view
 icon: mdi:home
-badges:
-   - entity: person.alex
-   - entity: sun.sun
 cards:
   # Street Temp
   - type: sensor
@@ -14,28 +11,36 @@ cards:
   - type: sensor
     entity: sensor.humidity_158d0001b91127
     graph: line 
+
+  # Sun
+  - type: history-graph
+    title: sun
+    entities:
+    - entity: sun.sun    
     
   # Weather
   - type: weather-forecast  
     entity: weather.home
     show_forecast: true
     
+  # Gateway light  
+  - type: light
+    entity: light.gateway_light_34ce008141db
+
+   # Gateway illumination   
   - type: entities
     entities:
       - sensor.illumination_34ce008141db
-      - light.gateway_light_34ce008141db
-    title: Living Room
-  - type: alarm-panel
-    entity: alarm_control_panel.xiaomi_miio_gateway_alarm
-  - type: entities
-    entities:
-      - light.xiaomi_philips_ceiling_led
-    title: Light
+     
+#   # Gateway alarm     
+#   - type: alarm-panel
+#     entity: alarm_control_panel.xiaomi_miio_gateway_alarm
+
+  # LG TV
   - type: media-control
     entity: media_player.lg_tv
-    
+  
+  # Switch plug for Gateway
   - type: entities
     entities:
-      #- switch.plug_158d00010dec94
       - switch.xiaomi_miio_switch
-    title: Switch
