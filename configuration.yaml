@@ -10,16 +10,9 @@ homeassistant:
   external_url: !secret duckdns_url
   internal_url: http://192.168.1.31:8123
   customize: !include customize.yaml
-  
-# zone:
-#   - name: Home
-#     latitude: !secret latitude_coord
-#     longitude: !secret longitude_coord
-#     radius: 10
-#     icon: mdi:home
 
 group: !include groups.yaml
-#automation: !include_dir_merge_list automation
+automation: !include_dir_merge_list automation
 script: !include scripts.yaml
 scene: !include scenes.yaml
 sensor: !include_dir_merge_list includes/sensor
@@ -44,25 +37,27 @@ switch:
     model: zimi.powerstrip.v2
   
 # Telegram
-# telegram_bot:
-#   - platform: polling
-#     api_key: !secret telegram_api_key
-#     allowed_chat_ids:
-#       - !secret telegram_chat_id_alex
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      - !secret telegram_chat_id_alex
 
-#notify: 
-#  - platform: telegram
-#    name: Telegram
-#    chat_id: !secret telegram_chat_id_alex
-#    
+notify: 
+  - platform: telegram
+    name: Telegram
+    chat_id: !secret telegram_chat_id_alex
+    
 #  - platform: webostv
 #    name: LG TV
 #    host: 192.168.1.11
 #    filename: webostv.conf
 
-# LG TV
+
+# Need for TVs
 wake_on_lan:
 
+# LG TV
 webostv:
   host: 192.168.1.11
   name: LG TV
@@ -73,6 +68,7 @@ webostv:
       broadcast_address: 192.168.1.255
       broadcast_port: 9
 
+# Samsung TV
 samsungtv:
   host: 192.168.1.7
   name: Samsung TV
@@ -84,9 +80,9 @@ samsungtv:
       broadcast_port: 9
 
 # Sonoff
-# sonoff:
-#   username: !secret sonoff_username
-#   password: !secret sonoff_password
+sonoff:
+  username: !secret sonoff_username
+  password: !secret sonoff_password
   
 # Speedtest  
 speedtestdotnet:

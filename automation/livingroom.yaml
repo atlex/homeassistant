@@ -31,3 +31,15 @@
     service: notify.Telegram
     data_template:
       message: "Livingroom temperature is {{ states('sensor.temperature_158d00019d37b4') }}%."
+      
+- id: livingroom_tv_on
+  alias: livingroom_tv_on
+  trigger:
+    platform: state
+    entity_id: media_player.lg_tv_2
+    from: 'off'
+    to: 'on'
+  action:
+    service: notify.Telegram
+    data_template:
+      message: "LG TV is {{ states('media_player.lg_tv_2') }}."

@@ -87,7 +87,11 @@ device_tracker.sm_g965f_2:
 
 # Sonoff
 switch.sonoff_1000b6d861:
+  friendly_name: Bathroom Fan
   icon: mdi:fan
+  
+switch.sonoff_1000d4b908_1:
+  friendly_name: Bedroom Lamp
   
 # 
 media_player.lg_tv:
@@ -126,13 +130,13 @@ sensor.speedtest_ping:
   friendly_name: Ping
   
 # Router
-sensor.rt_ac68u_kib_s_received:
+sensor.rt_ac68u_kib_s_received_2:
   friendly_name: Received kb/s
-sensor.rt_ac68u_kib_s_sent:
+sensor.rt_ac68u_kib_s_sent_2:
   friendly_name: Sent kb/s
-sensor.rt_ac68u_b_received:
+sensor.rt_ac68u_b_received_2:
   friendly_name: Received
-sensor.rt_ac68u_b_sent:  
+sensor.rt_ac68u_b_sent_2:  
   friendly_name: Sent
   
   
