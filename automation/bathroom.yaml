@@ -13,20 +13,33 @@
     - delay: 00:00:03
     - service: notify.Telegram
       data_template:
-        message: "Bathroom humidity {{ states('sensor.humidity_158d0001b8cd45') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan {{ states('switch.sonoff_1000b6d861') }}."
+        message: "Bathroom humidity {{ states('sensor.humidity_158d0001b8cd45') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
 
 - id: bathroom_hum_below
   alias: bathroom_hum_below
   trigger:
-     platform: template # Bathroom AND Bathroom2
-     value_template: '{{ states(sensor.humidity_158d0001b8cd45) | float < 65 and states(sensor.humidity_158d00040e1461) | float < 65 }}'
+    - platform: numeric_state
+      entity_id: sensor.humidity_158d0001b8cd45
+      below: 60
+    - platform: numeric_state
+      entity_id: sensor.humidity_158d00040e1461
+      below: 60
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.humidity_158d0001b8cd45
+        below: 60
+      - condition: numeric_state
+        entity_id: sensor.humidity_158d00040e1461
+        below: 60
   action:
     - service: switch.turn_off
       entity_id: switch.sonoff_1000b6d861
     - delay: 00:00:03
     - service: notify.Telegram
       data_template:
-        message: "Bathroom humidity {{ states('sensor.humidity_158d0001b8cd45') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan {{ states('switch.sonoff_1000b6d861') }}."
+        message: "Bathroom humidity {{ states('sensor.humidity_158d0001b8cd45') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
             
 - id: bathroom_fan_button
   alias: bathroom_fan_button
@@ -42,5 +55,5 @@
     - delay: 00:00:03
     - service: notify.Telegram
       data_template:
-        message: "Bathroom Fan {{ states('switch.sonoff_1000b6d861') }}."
+        message: "Bathroom Fan is {{ states('switch.sonoff_1000b6d861') }}."
 
