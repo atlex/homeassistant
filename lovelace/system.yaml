@@ -44,19 +44,19 @@ cards:
   # Router    
   - type: history-graph
     entities:
-    - entity: sensor.rt_ac68u_kib_s_received
-    - entity: sensor.rt_ac68u_kib_s_sent
+    - entity: sensor.rt_ac68u_kib_s_received_2
+    - entity: sensor.rt_ac68u_kib_s_sent_2
 
   - type: history-graph
     entities:
-    - entity: sensor.rt_ac68u_b_received
-    - entity: sensor.rt_ac68u_b_sent
+    - entity: sensor.rt_ac68u_b_received_2
+    - entity: sensor.rt_ac68u_b_sent_2
 
   - type: entities
     entities:
-    - entity: sensor.rt_ac68u_kib_s_received
-    - entity: sensor.rt_ac68u_kib_s_sent
-    - entity: sensor.rt_ac68u_b_received
-    - entity: sensor.rt_ac68u_b_sent
+    - entity: sensor.rt_ac68u_kib_s_received_2
+    - entity: sensor.rt_ac68u_kib_s_sent_2
+    - entity: sensor.rt_ac68u_b_received_2
+    - entity: sensor.rt_ac68u_b_sent_2
     
 

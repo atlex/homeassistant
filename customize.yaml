@@ -81,8 +81,8 @@ sensor.mi_t_3f59c880c04e:
   friendly_name: Livingroom Temperature
   device_class: temperature
 
-# 
-device_tracker.sm_g965f_2:
+# Alex phone
+device_tracker.sm_g965f:
   friendly_name: S9+
 
 # Sonoff
@@ -112,6 +112,12 @@ switch.36007448840d8e799d98:
 # COVID
 sensor.belarus_coronavirus_deaths:
   friendly_name: умерло
+sensor.belarus_coronavirus_confirmed:
+  friendly_name: подтверждено
+sensor.belarus_coronavirus_recovered:
+  friendly_name: вылечилось
+sensor.belarus_coronavirus_current:
+  friendly_name: заболело
 
 # Reolink
 camera.reokids_profile000_mainstream:

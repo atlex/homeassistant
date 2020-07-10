@@ -39,8 +39,31 @@ cards:
   # LG TV
   - type: media-control
     entity: media_player.lg_tv
+ 
+  # Front door
+  - type: history-graph
+    title: front door
+    entities:
+    - entity: binary_sensor.door_window_sensor_158d0001b7585e
+
+  # Alex phone
+  - type: history-graph
+    title: alex's phone
+    entities:
+    - entity: device_tracker.sm_g965f
   
   # Switch plug for Gateway
   - type: entities
     entities:
       - switch.xiaomi_miio_switch
+      
+ # COVID   
+  - type: history-graph
+    title: covid
+    entities:
+    - entity: sensor.belarus_coronavirus_confirmed
+    - entity: sensor.belarus_coronavirus_current
+    - entity: sensor.belarus_coronavirus_deaths
+    hours_to_show: 2160
+
+

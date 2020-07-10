@@ -23,8 +23,8 @@ cards:
     graph: line
   
   # Sonoff
-#   - type: button   
-#     entity: switch.sonoff_1000b6d861
+  - type: button   
+    entity: switch.sonoff_1000b6d861
 
   #Tuya Washmachine
   - type: button
