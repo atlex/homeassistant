@@ -67,7 +67,7 @@
       entity_id: camera.yi720hd
       filename: "/config/www/cam_captures/yi720hd.mp4"
       duration: 10
-  - delay: 00:00:20      
+  - delay: 00:00:20
   - service: notify.Telegram
     data:
       title: Video

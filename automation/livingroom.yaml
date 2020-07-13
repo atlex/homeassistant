@@ -74,7 +74,19 @@
       data_template:
         message: "LG TV is {{ states('media_player.lg_tv') }}. Light is {{ states('sensor.illumination_34ce008141db') }}LM. Light is {{ states('light.gateway_light_34ce008141db') }}."
 
-
-
+- id: livingroom_tv_off
+  alias: livingroom_tv_off
+  trigger:
+    - platform: state
+      entity_id: media_player.lg_tv
+      from: 'on'
+      to: 'off'
+  action:
+    - service: light.turn_off
+      entity_id: light.gateway_light_34ce008141db
+    - delay: 00:00:03
+    - service: notify.Telegram
+      data_template:
+        message: "LG TV is {{ states('media_player.lg_tv') }}. Light is {{ states('sensor.illumination_34ce008141db') }}LM. Light is {{ states('light.gateway_light_34ce008141db') }}."
 
       
