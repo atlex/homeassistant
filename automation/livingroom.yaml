@@ -53,7 +53,7 @@
       to: 'on'
     - platform: numeric_state
       entity_id: sensor.illumination_34ce008141db
-      below: 60
+      below: 40
   condition:
     condition: and
     conditions:
@@ -62,13 +62,13 @@
         state: 'on'
       - condition: numeric_state
         entity_id: sensor.illumination_34ce008141db
-        below: 60
+        below: 40
   action:
     - service: light.turn_on
       entity_id: light.gateway_light_34ce008141db
       data:
-        brightness: 30
-        rgb_color: [255,0,0]
+        brightness: 20
+        rgb_color: [255,51,51]
     - delay: 00:00:03
     - service: notify.Telegram
       data_template:
