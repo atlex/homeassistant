@@ -1,0 +1,71 @@
+- id: telegram_help
+  alias: telegram_help
+  initial_state: true
+  trigger: 
+    - platform: event
+      event_type: telegram_command
+      event_data: 
+        command: "/help"
+  action:
+    - service: notify.Telegram
+      data_template:
+        message: |
+            /temp - all temperature
+            /hum - all humidity
+            /clima - all temperature and humidity
+
+- id: telegram_temp_all_report
+  alias: telegram_temp_all_report
+  initial_state: true
+  trigger: 
+    - platform: event
+      event_type: telegram_command
+      event_data: 
+        command: "/temp"
+  action:
+    - service: notify.Telegram
+      data_template:
+        message: |
+            Street {{ states('sensor.temperature_158d0001b91127') }}
+            Kids {{ states('sensor.temperature_158d00019f8776') }}
+            Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}
+            Bedroom {{ states('sensor.temperature_158d00019d3869') }}
+            Kitchen {{ states('sensor.temperature_158d00019d37b4') }}
+            
+- id: telegram_hum_all_report
+  alias: telegram_hum_all_report
+  initial_state: true
+  trigger: 
+    - platform: event
+      event_type: telegram_command
+      event_data: 
+        command: "/hum"
+  action:
+    - service: notify.Telegram
+      data_template:
+        message: |
+            Street {{ states('sensor.humidity_158d0001b91127') }}
+            Kids {{ states('sensor.humidity_158d00019f8776') }}
+            Bathroom {{ states('sensor.humidity_158d0001b8cd45') }}
+            Bedroom {{ states('sensor.humidity_158d00019d3869') }}
+            Kitchen {{ states('sensor.humidity_158d00019d37b4') }}  
+
+- id: telegram_clima_all_report
+  alias: telegram_clima_all_report
+  initial_state: true
+  trigger: 
+    - platform: event
+      event_type: telegram_command
+      event_data: 
+        command: "/clima"
+  action:
+    - service: notify.Telegram
+      data_template:
+        message: |
+            Street {{ states('sensor.temperature_158d0001b91127') }}C / {{ states('sensor.humidity_158d0001b91127') }}%
+            Kids {{ states('sensor.temperature_158d00019f8776') }}C / {{ states('sensor.humidity_158d00019f8776') }}%
+            Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}C / {{ states('sensor.humidity_158d0001b8cd45') }}%
+            Bedroom {{ states('sensor.temperature_158d00019d3869') }}C / {{ states('sensor.humidity_158d00019d3869') }}%
+            Kitchen {{ states('sensor.temperature_158d00019d37b4') }}C / {{ states('sensor.humidity_158d00019d37b4') }}% 
+
+            
