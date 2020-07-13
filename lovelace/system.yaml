@@ -6,6 +6,7 @@ cards:
   - type: entities
     entities:
     - entity: sensor.158d00010dec94_load
+    - entity: sensor.xiaomi_miio_switch_load
 
   # Batteries
   - type: entities

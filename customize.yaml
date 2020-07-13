@@ -93,7 +93,7 @@ switch.sonoff_1000b6d861:
 switch.sonoff_1000d4b908_1:
   friendly_name: Bedroom Lamp
   
-# 
+# LG TV
 media_player.lg_tv:
   icon: mdi:television
   

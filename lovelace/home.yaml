@@ -39,7 +39,7 @@ cards:
   # LG TV
   - type: media-control
     entity: media_player.lg_tv
- 
+
   # Front door
   - type: history-graph
     title: front door

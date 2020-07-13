@@ -31,15 +31,50 @@
     service: notify.Telegram
     data_template:
       message: "Livingroom temperature is {{ states('sensor.temperature_158d00019d37b4') }}%."
-      
+
 - id: livingroom_tv_on
   alias: livingroom_tv_on
   trigger:
     platform: state
-    entity_id: media_player.lg_tv_2
+    entity_id: media_player.lg_tv
     from: 'off'
     to: 'on'
   action:
     service: notify.Telegram
     data_template:
-      message: "LG TV is {{ states('media_player.lg_tv_2') }}."
+      message: "LG TV is {{ states('media_player.lg_tv') }}."
+      
+- id: livingroom_tv_gateway_light_on
+  alias: livingroom_tv_gateway_light_on
+  trigger:
+    - platform: state
+      entity_id: media_player.lg_tv
+      from: 'off'
+      to: 'on'
+    - platform: numeric_state
+      entity_id: sensor.illumination_34ce008141db
+      below: 60
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: media_player.lg_tv
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.illumination_34ce008141db
+        below: 60
+  action:
+    - service: light.turn_on
+      entity_id: light.gateway_light_34ce008141db
+      data:
+        brightness: 30
+        rgb_color: [255,0,0]
+    - delay: 00:00:03
+    - service: notify.Telegram
+      data_template:
+        message: "LG TV is {{ states('media_player.lg_tv') }}. Light is {{ states('sensor.illumination_34ce008141db') }}LM. Light is {{ states('light.gateway_light_34ce008141db') }}."
+
+
+
+
+      

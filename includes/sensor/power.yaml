@@ -1,9 +1,17 @@
   - platform: template
     sensors:
+    
      158d00010dec94_load:
        value_template: "{{ state_attr('switch.plug_158d00010dec94', 'load_power') }}"
        unit_of_measurement: 'Вт'
        entity_id: switch.plug_158d00010dec94
        device_class: power
        friendly_name: 'Dishwasher Plug power'
+        
+     xiaomi_miio_switch_load:
+       value_template: "{{ state_attr('switch.xiaomi_miio_switch', 'load_power') }}"
+       unit_of_measurement: 'Вт'
+       entity_id: switch.xiaomi_miio_switch
+       device_class: power
+       friendly_name: 'Xiaomi Zimi Powerstrip power'
         
