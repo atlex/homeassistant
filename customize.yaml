@@ -113,11 +113,11 @@ switch.36007448840d8e799d98:
 sensor.belarus_coronavirus_deaths:
   friendly_name: умерло
 sensor.belarus_coronavirus_confirmed:
-  friendly_name: подтверждено
+  friendly_name: заболело
 sensor.belarus_coronavirus_recovered:
   friendly_name: вылечилось
 sensor.belarus_coronavirus_current:
-  friendly_name: заболело
+  friendly_name: новые
 
 # Reolink
 camera.reokids_profile000_mainstream:

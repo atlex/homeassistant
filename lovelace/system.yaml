@@ -8,6 +8,38 @@ cards:
     - entity: sensor.158d00010dec94_load
     - entity: sensor.xiaomi_miio_switch_load
 
+#   # Power consumed
+#   - type: history-graph
+#     hours_to_show: 80
+#     entities:
+#     - entity: sensor.158d00010dec94_consumed
+
+  - type: entities
+    title: power consumed daily
+    entities:
+    - entity: sensor.daily_158d00010dec94_day
+    - entity: sensor.daily_xiaomi_miio_switch_day
+    
+  - type: entities
+    title: power consumed monthly
+    entities:
+    - entity: sensor.monthly_158d00010dec94_day
+    - entity: sensor.monthly_xiaomi_miio_switch_day
+    
+#   - type: history-graph
+#     title: power consumed daily
+#     hours_to_show: 80
+#     entities:
+#     - entity: sensor.daily_158d00010dec94_day
+#     - entity: sensor.daily_xiaomi_miio_switch_day
+    
+#   - type: history-graph
+#     title: power consumed monthly
+#     hours_to_show: 80
+#     entities:
+#     - entity: sensor.monthly_158d00010dec94_day
+#     - entity: sensor.monthly_xiaomi_miio_switch_day
+    
   # Batteries
   - type: entities
     entities:
@@ -45,19 +77,19 @@ cards:
   # Router    
   - type: history-graph
     entities:
-    - entity: sensor.rt_ac68u_kib_s_received_2
-    - entity: sensor.rt_ac68u_kib_s_sent_2
+    - entity: sensor.rt_ac68u_kib_s_received
+    - entity: sensor.rt_ac68u_kib_s_sent
 
   - type: history-graph
     entities:
-    - entity: sensor.rt_ac68u_b_received_2
-    - entity: sensor.rt_ac68u_b_sent_2
+    - entity: sensor.rt_ac68u_b_received
+    - entity: sensor.rt_ac68u_b_sent
 
   - type: entities
     entities:
-    - entity: sensor.rt_ac68u_kib_s_received_2
-    - entity: sensor.rt_ac68u_kib_s_sent_2
-    - entity: sensor.rt_ac68u_b_received_2
-    - entity: sensor.rt_ac68u_b_sent_2
+    - entity: sensor.rt_ac68u_kib_s_received
+    - entity: sensor.rt_ac68u_kib_s_sent
+    - entity: sensor.rt_ac68u_b_received
+    - entity: sensor.rt_ac68u_b_sent
     
 

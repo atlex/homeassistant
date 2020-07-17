@@ -1,0 +1,26 @@
+# Dishwasher Plug
+  daily_158d00010dec94:
+    source: sensor.158d00010dec94_load
+    cycle: daily
+    tariffs:
+      - day
+      
+  monthly_158d00010dec94:
+    source: sensor.158d00010dec94_load
+    cycle: monthly
+    tariffs:
+      - day
+      
+# Xiaomi Zimi Powerstrip
+  daily_xiaomi_miio_switch:
+    source: sensor.xiaomi_miio_switch_load
+    cycle: daily
+    tariffs:
+      - day
+      
+  monthly_xiaomi_miio_switch:
+    source: sensor.xiaomi_miio_switch_load
+    cycle: monthly
+    tariffs:
+      - day
+      
