@@ -144,7 +144,17 @@ sensor.rt_ac68u_b_received_2:
   friendly_name: Received
 sensor.rt_ac68u_b_sent_2:  
   friendly_name: Sent
-  
-  
-  
+
+# Power Dishwasher Plug
+sensor.daily_158d00010dec94_day:
+  friendly_name: Dishwasher Plug
+sensor.monthly_158d00010dec94_day:
+  friendly_name: Dishwasher Plug
+
+# Power Xiaomi Zimi Powerstrip
+sensor.daily_xiaomi_miio_switch_day:
+  friendly_name: Xiaomi Zimi Powerstrip
+sensor.monthly_xiaomi_miio_switch_day:
+  friendly_name: Xiaomi Zimi Powerstrip
+
   
