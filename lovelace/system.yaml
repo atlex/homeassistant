@@ -2,6 +2,7 @@ title: System
 path: system
 icon: mdi:laptop
 cards:
+
   # Power
   - type: entities
     entities:
@@ -67,6 +68,12 @@ cards:
     entity: sensor.disk_free
     max: 110
     min: 0
+    
+  # Last boot/uptime
+  - type: entities
+    entities:
+    - entity: sensor.last_boot
+    - entity: sensor.uptime
 
   # Speedtest
   - type: history-graph

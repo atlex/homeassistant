@@ -13,6 +13,7 @@
             /temp - all temperature
             /hum - all humidity
             /clima - all temperature and humidity
+            /sys
 
 - id: telegram_temp_all_report
   alias: telegram_temp_all_report
@@ -68,4 +69,19 @@
             Bedroom {{ states('sensor.temperature_158d00019d3869') }}C / {{ states('sensor.humidity_158d00019d3869') }}%
             Kitchen {{ states('sensor.temperature_158d00019d37b4') }}C / {{ states('sensor.humidity_158d00019d37b4') }}% 
 
+- id: telegram_sys
+  alias: telegram_help
+  initial_state: true
+  trigger: 
+    - platform: event
+      event_type: telegram_command
+      event_data: 
+        command: "/sys"
+  action:
+    - service: notify.Telegram
+      data_template:
+        message: |
+            Last boot: {{ states('sensor.last_boot') }}
+            Uptime: {{ states('sensor.uptime') }} {{ state_attr('sensor.uptime', 'unit_of_measurement') }}   
+            Disk free: {{ states('sensor.disk_free') }} {{ state_attr('sensor.disk_free', 'unit_of_measurement') }}   
             
