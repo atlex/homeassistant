@@ -5,7 +5,7 @@
     - platform: event
       event_type: telegram_command
       event_data: 
-        command: "/help"
+        command: "/start"
   action:
     - service: notify.Telegram
       data_template:
@@ -13,7 +13,8 @@
             /temp - all temperature
             /hum - all humidity
             /clima - all temperature and humidity
-            /sys
+            /sys - system information
+            /cams - record clips from all cameras
 
 - id: telegram_temp_all_report
   alias: telegram_temp_all_report
@@ -70,7 +71,7 @@
             Kitchen {{ states('sensor.temperature_158d00019d37b4') }}C / {{ states('sensor.humidity_158d00019d37b4') }}% 
 
 - id: telegram_sys
-  alias: telegram_help
+  alias: telegram_sys
   initial_state: true
   trigger: 
     - platform: event
@@ -84,4 +85,41 @@
             Last boot: {{ states('sensor.last_boot') }}
             Uptime: {{ states('sensor.uptime') }} {{ state_attr('sensor.uptime', 'unit_of_measurement') }}   
             Disk free: {{ states('sensor.disk_free') }} {{ state_attr('sensor.disk_free', 'unit_of_measurement') }}   
+ 
+- id: telegram_cams
+  alias: telegram_cams
+  initial_state: true
+  trigger: 
+    - platform: event
+      event_type: telegram_command
+      event_data: 
+        command: "/cams"
+  action:
+    - service: camera.record
+      data:
+        entity_id: camera.reostreet_profile001_substream
+        filename: "/config/www/cam_captures/reoStreet.mp4"
+        duration: 10
+    - delay: 00:00:10
+    - service: camera.record
+      data:
+        entity_id: camera.reokids_profile001_substream
+        filename: "/config/www/cam_captures/reoKids.mp4"
+        duration: 10
+    - delay: 00:00:10
+    - service: camera.record
+      data:
+        entity_id: camera.yi720hd
+        filename: "/config/www/cam_captures/yi720hd.mp4"
+        duration: 10
+    - delay: 00:00:10
+    - service: notify.Telegram
+      data:
+        title: Video
+        message: "Видео"
+        data:
+          video:
+            - file: "/config/www/cam_captures/reoStreet.mp4"
+            - file: "/config/www/cam_captures/reoKids.mp4"
+            - file: "/config/www/cam_captures/yi720hd.mp4"
             
