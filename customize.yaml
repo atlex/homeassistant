@@ -127,6 +127,13 @@ camera.reokids_profile001_substream:
   friendly_name: reoKidsSub
   icon: mdi:webcam
   
+camera.reostreet_profile000_mainstream:
+  friendly_name: reoStreetMain
+  icon: mdi:webcam
+camera.reostreet_profile001_substream:
+  friendly_name: reoStreetSub
+  icon: mdi:webcam
+  
 # Speedtest
 sensor.speedtest_download:
   friendly_name: Download

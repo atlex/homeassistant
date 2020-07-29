@@ -11,9 +11,13 @@ cards:
     entity: camera.reokids_profile001_substream
     aspect_ratio: 50%
     
-  # Street
+  # Street Main
+  - type: entities
+    entities:
+    - entity: camera.reostreet_profile000_mainstream
+  # Street Sub     
   - type: picture-entity
-    entity: camera.dafangstreetffmpeg
+    entity: camera.reostreet_profile001_substream
     aspect_ratio: 50%
     
   # Kitchen HD
