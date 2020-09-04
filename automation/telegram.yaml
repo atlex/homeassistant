@@ -28,11 +28,11 @@
     - service: notify.Telegram
       data_template:
         message: |
-            Street {{ states('sensor.temperature_158d0001b91127') }}
-            Kids {{ states('sensor.temperature_158d00019f8776') }}
-            Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}
-            Bedroom {{ states('sensor.temperature_158d00019d3869') }}
-            Kitchen {{ states('sensor.temperature_158d00019d37b4') }}
+            Street {{ states('sensor.temperature_158d0001b91127') }}C
+            Kids {{ states('sensor.temperature_158d00019f8776') }}C
+            Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}C, {{ states('sensor.temperature_158d00040e1461') }}C 
+            Bedroom {{ states('sensor.temperature_158d00019d3869') }}C
+            Kitchen {{ states('sensor.temperature_158d00019d37b4') }}C
             
 - id: telegram_hum_all_report
   alias: telegram_hum_all_report
@@ -46,11 +46,11 @@
     - service: notify.Telegram
       data_template:
         message: |
-            Street {{ states('sensor.humidity_158d0001b91127') }}
-            Kids {{ states('sensor.humidity_158d00019f8776') }}
-            Bathroom {{ states('sensor.humidity_158d0001b8cd45') }}
-            Bedroom {{ states('sensor.humidity_158d00019d3869') }}
-            Kitchen {{ states('sensor.humidity_158d00019d37b4') }}  
+            Street {{ states('sensor.humidity_158d0001b91127') }}%
+            Kids {{ states('sensor.humidity_158d00019f8776') }}%
+            Bathroom {{ states('sensor.humidity_158d0001b8cd45') }}%, {{ states('sensor.humidity_158d00040e1461') }}%
+            Bedroom {{ states('sensor.humidity_158d00019d3869') }}%
+            Kitchen {{ states('sensor.humidity_158d00019d37b4') }}%  
 
 - id: telegram_clima_all_report
   alias: telegram_clima_all_report
@@ -66,7 +66,7 @@
         message: |
             Street {{ states('sensor.temperature_158d0001b91127') }}C / {{ states('sensor.humidity_158d0001b91127') }}%
             Kids {{ states('sensor.temperature_158d00019f8776') }}C / {{ states('sensor.humidity_158d00019f8776') }}%
-            Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}C / {{ states('sensor.humidity_158d0001b8cd45') }}%
+            Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}C, {{ states('sensor.temperature_158d00040e1461') }}C / {{ states('sensor.humidity_158d0001b8cd45') }}%, {{ states('sensor.humidity_158d00040e1461') }}% 
             Bedroom {{ states('sensor.temperature_158d00019d3869') }}C / {{ states('sensor.humidity_158d00019d3869') }}%
             Kitchen {{ states('sensor.temperature_158d00019d37b4') }}C / {{ states('sensor.humidity_158d00019d37b4') }}% 
 
@@ -100,19 +100,19 @@
         entity_id: camera.reostreet_profile001_substream
         filename: "/config/www/cam_captures/reoStreet.mp4"
         duration: 10
-    - delay: 00:00:10
+    - delay: 00:00:15
     - service: camera.record
       data:
         entity_id: camera.reokids_profile001_substream
         filename: "/config/www/cam_captures/reoKids.mp4"
         duration: 10
-    - delay: 00:00:10
+    - delay: 00:00:15
     - service: camera.record
       data:
         entity_id: camera.yi720hd
         filename: "/config/www/cam_captures/yi720hd.mp4"
         duration: 10
-    - delay: 00:00:10
+    - delay: 00:00:15
     - service: notify.Telegram
       data:
         title: Video
