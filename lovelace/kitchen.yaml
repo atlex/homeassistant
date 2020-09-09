@@ -4,12 +4,12 @@ icon: mdi:fridge-outline
 cards:
   # Temp
   - type: sensor
-    entity: sensor.temperature_158d00019d37b4
+    entity: sensor.lumi_lumi_sens_975c1804_temperature
     graph: line
 
   # Hum
   - type: sensor
-    entity: sensor.humidity_158d00019d37b4
+    entity: sensor.lumi_lumi_sens_975c1804_humidity
     graph: line
 
   # Switches

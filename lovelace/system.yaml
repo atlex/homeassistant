@@ -47,12 +47,14 @@ cards:
     - entity: sensor.158d0001b91127_battery
     - entity: sensor.158d00019f8776_battery
     - entity: sensor.158d00019d3869_battery
-    - entity: sensor.158d00019d37b4_battery
+    # - entity: sensor.158d00019d37b4_battery
     - entity: sensor.158d0001b8cd45_battery
+    - entity: sensor.158d00040e1461_battery
     - entity: sensor.158d0001640452_battery
     - entity: sensor.158d0001b7585e_battery
     - entity: sensor.158d0001b195a0_battery
     - entity: sensor.lumi_lumi_sensor_motion_c508db01_power
+    - entity: sensor.lumi_lumi_sens_975c1804_power
   
   # Usage  
   - type: gauge 

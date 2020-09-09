@@ -34,12 +34,15 @@ sensor.temperature_158d00019d3869:
   friendly_name: Bedroom Temperature
   device_class: temperature
   
-sensor.humidity_158d00019d37b4:
+sensor.lumi_lumi_sens_975c1804_humidity:
   friendly_name: Kitchen Humidity
   device_class: humidity
-sensor.temperature_158d00019d37b4:
+sensor.lumi_lumi_sens_975c1804_temperature:
   friendly_name: Kitchen Temperature
   device_class: temperature
+sensor.lumi_lumi_sens_975c1804_power:
+  friendly_name: Kitchen Temperature battery
+  device_class: battery
 
 sensor.illumination_34ce008141db:
   friendly_name: Gateway Illumination

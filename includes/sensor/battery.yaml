@@ -26,14 +26,14 @@
        device_class: battery
        friendly_name: 'Bedroom Temperature battery'
        
-  - platform: template
-    sensors:
-     158d00019d37b4_battery:
-       value_template: "{{ state_attr('sensor.temperature_158d00019d37b4', 'battery_level') }}"
-       unit_of_measurement: '%'
-       entity_id: sensor.temperature_158d00019d37b4
-       device_class: battery
-       friendly_name: 'Kitchen Temperature battery'
+#   - platform: template
+#     sensors:
+#      158d00019d37b4_battery:
+#       value_template: "{{ state_attr('sensor.temperature_158d00019d37b4', 'battery_level') }}"
+#       unit_of_measurement: '%'
+#       entity_id: sensor.temperature_158d00019d37b4
+#       device_class: battery
+#       friendly_name: 'Kitchen Temperature battery'
        
   - platform: template
     sensors:
@@ -43,6 +43,15 @@
        entity_id: sensor.temperature_158d0001b8cd45
        device_class: battery
        friendly_name: 'Bathroom Temperature battery'
+       
+  - platform: template
+    sensors:
+     158d00040e1461_battery:
+       value_template: "{{ state_attr('sensor.temperature_158d00040e1461', 'battery_level') }}"
+       unit_of_measurement: '%'
+       entity_id: sensor.temperature_158d00040e1461
+       device_class: battery
+       friendly_name: 'Bathroom2 Temperature battery'
        
   - platform: template
     sensors:
