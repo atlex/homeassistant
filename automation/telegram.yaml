@@ -32,7 +32,7 @@
             Kids {{ states('sensor.temperature_158d00019f8776') }}C
             Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}C, {{ states('sensor.temperature_158d00040e1461') }}C 
             Bedroom {{ states('sensor.temperature_158d00019d3869') }}C
-            Kitchen {{ states('sensor.temperature_158d00019d37b4') }}C
+            Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C
             
 - id: telegram_hum_all_report
   alias: telegram_hum_all_report
@@ -50,7 +50,7 @@
             Kids {{ states('sensor.humidity_158d00019f8776') }}%
             Bathroom {{ states('sensor.humidity_158d0001b8cd45') }}%, {{ states('sensor.humidity_158d00040e1461') }}%
             Bedroom {{ states('sensor.humidity_158d00019d3869') }}%
-            Kitchen {{ states('sensor.humidity_158d00019d37b4') }}%  
+            Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}%  
 
 - id: telegram_clima_all_report
   alias: telegram_clima_all_report
@@ -68,7 +68,7 @@
             Kids {{ states('sensor.temperature_158d00019f8776') }}C / {{ states('sensor.humidity_158d00019f8776') }}%
             Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}C, {{ states('sensor.temperature_158d00040e1461') }}C / {{ states('sensor.humidity_158d0001b8cd45') }}%, {{ states('sensor.humidity_158d00040e1461') }}% 
             Bedroom {{ states('sensor.temperature_158d00019d3869') }}C / {{ states('sensor.humidity_158d00019d3869') }}%
-            Kitchen {{ states('sensor.temperature_158d00019d37b4') }}C / {{ states('sensor.humidity_158d00019d37b4') }}% 
+            Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C / {{ states('sensor.lumi_lumi_sens_975c1804_humidity') }}% 
 
 - id: telegram_sys
   alias: telegram_sys
