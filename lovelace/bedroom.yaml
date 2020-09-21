@@ -12,14 +12,16 @@ cards:
     entity: sensor.humidity_158d00019d3869
     graph: line
     
+  # Bedroom lamp
+  - type: button   
+    entity: switch.sonoff_1000d4b908_1
+    icon: 'mdi:lamp'
+    
   # Bedroom Motion 
   - type: history-graph
     title: motion
     entities:
-    #- entity: binary_sensor.motion_sensor_158d0001db08c5
     - entity: binary_sensor.lumi_lumi_sensor_motion_c508db01_occupancy
       name: occupancy
     - entity: binary_sensor.lumi_lumi_sensor_motion_c508db01_ias_zone
       name: zone
-
-
