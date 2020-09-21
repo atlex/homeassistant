@@ -7,8 +7,8 @@ homeassistant:
   elevation: 250
   unit_system: metric
   time_zone: Europe/Minsk
-  external_url: !secret duckdns_url
-  internal_url: http://192.168.1.31:8123
+  external_url: !secret duckdns_external_url
+  internal_url: !secret duckdns_internal_url
   customize: !include customize.yaml
 
 group: !include groups.yaml
@@ -87,7 +87,7 @@ sonoff:
   
 # Speedtest  
 speedtestdotnet:
-  scan_interval: '01:00:00'
+  scan_interval: '02:00:00'
   monitored_conditions:
     - ping
     - download
