@@ -2,14 +2,16 @@ default_config:
 
 homeassistant:
   name: HomeRPI4
-  latitude: !secret latitude_coord
-  longitude: !secret longitude_coord
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
   elevation: 250
   unit_system: metric
   time_zone: Europe/Minsk
   external_url: !secret duckdns_external_url
   internal_url: !secret duckdns_internal_url
   customize: !include customize.yaml
+  media_dirs:
+    motion: /config/www/cam_captures
 
 group: !include groups.yaml
 automation: !include_dir_merge_list automation

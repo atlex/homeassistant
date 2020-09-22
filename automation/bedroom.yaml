@@ -20,3 +20,53 @@
     data_template:
       message: "Bedroom temperature is {{ states('sensor.temperature_158d00019d3869') }}%."
       
+- id: bedroom_lamp_motion_on
+  alias: bedroom_lamp_motion_on
+  trigger:
+    platform: state
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_c508db01_occupancy
+    from: "off"
+    to: "on"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        before: '21:00:00'
+        after: '19:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.sonoff_1000d4b908_1
+    - delay: 00:00:03
+    - service: notify.Telegram
+      data_template:
+        message: |
+            Bedroom occupancy is {{ states('binary_sensor.lumi_lumi_sensor_motion_c508db01_occupancy') }}.
+            Bedroom motion is {{ states('binary_sensor.lumi_lumi_sensor_motion_c508db01_ias_zone') }}.
+            Bedroom lamp is {{ states('switch.sonoff_1000d4b908_1') }}.
+            Time is {{ states('sensor.time') }}.
+      
+- id: bedroom_lamp_motion_off
+  alias: bedroom_lamp_motion_off
+  trigger:
+    platform: state
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_c508db01_occupancy
+    from: "on"
+    to: "off"
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: time
+#         before: '21:00:00'
+#         after: '19:00:00'    
+  action:
+    - service: switch.turn_off
+      entity_id: switch.sonoff_1000d4b908_1
+    - delay: 00:00:03
+    - service: notify.Telegram
+      data_template:
+        message: |
+            Bedroom occupancy is {{ states('binary_sensor.lumi_lumi_sensor_motion_c508db01_occupancy') }}.
+            Bedroom motion is {{ states('binary_sensor.lumi_lumi_sensor_motion_c508db01_ias_zone') }}.
+            Bedroom lamp is {{ states('switch.sonoff_1000d4b908_1') }}.
+            Time is {{ states('sensor.time') }}.
+      

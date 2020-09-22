@@ -174,3 +174,14 @@ sensor.lumi_lumi_sensor_motion_c508db01_power:
   friendly_name: Bedroom Motion battery
 binary_sensor.lumi_lumi_sensor_motion_c508db01_ias_zone:
   friendly_name: Bedroom Motion Zone
+
+# BlitzWolf SPH13 Microwave
+switch.tz3000_g5xawfcq_ts0121_on_off:
+  friendly_name: Microwave
+  icon: mdi:microwave
+sensor.tz3000_g5xawfcq_ts0121_electrical_measurement:
+  friendly_name: Microwave power
+  device_class: power
+sensor.tz3000_g5xawfcq_ts0121_smartenergy_metering:
+  friendly_name: Microwave energy metering
+  device_class: power
