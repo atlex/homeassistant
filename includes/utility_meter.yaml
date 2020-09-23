@@ -24,3 +24,15 @@
     tariffs:
       - day
       
+# Microwave
+  daily_microwave_switch:
+    source: sensor.tz3000_g5xawfcq_ts0121_f29613fe_smartenergy_metering
+    cycle: daily
+    tariffs:
+      - day
+      
+  monthly_microwave_switch:
+    source: sensor.tz3000_g5xawfcq_ts0121_f29613fe_smartenergy_metering
+    cycle: monthly
+    tariffs:
+      - day
