@@ -30,5 +30,9 @@ cards:
   - type: button
     entity: switch.36007448840d8e799d98
 
-
+# Water leak
+  - type: history-graph
+    title: Water leak
+    entities:
+    - entity: binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone
 
