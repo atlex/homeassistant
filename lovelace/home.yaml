@@ -2,6 +2,17 @@ title: Home
 path: default_view
 icon: mdi:home
 cards:
+ 
+# Weather   
+  - type: weather-forecast
+    entity: weather.openweathermap
+    secondary_info_attribute: humidity
+    #show_forecast: true
+    
+  - type: weather-forecast  
+    entity: weather.home
+    #show_forecast: true
+
   # Street Temp
   - type: sensor
     entity: sensor.temperature_158d0001b91127
@@ -17,11 +28,6 @@ cards:
     title: sun
     entities:
     - entity: sun.sun    
-    
-  # Weather
-  - type: weather-forecast  
-    entity: weather.home
-    show_forecast: true
     
   # Gateway light  
   - type: light

@@ -21,8 +21,20 @@ sensor: !include_dir_merge_list includes/sensor
 camera: !include includes/cameras.yaml
 utility_meter: !include includes/utility_meter.yaml
 
+logger:
+  default: info
+#   logs:
+#     homeassistant.components.zha: debug
+#     homeassistant.setup: debug
+#     homeassistant.config_entries: debug
+#     zigpy_cc.api: debug
+#     zigpy.application: debug
+
 lovelace:
   mode: yaml
+  resources:
+    - url: /local/zha-network-visualization-card/zha-network-visualization-card.js
+      type: module
 
 # Xiaomi Philips Ceiling LED
 light:
@@ -96,7 +108,7 @@ speedtestdotnet:
     - upload
 
 # ZHA network map  
-#zha_map:
+zha_map:
 
 
 

@@ -106,5 +106,7 @@ cards:
 #     - entity: sensor.rt_ac68u_kib_s_sent
 #     - entity: sensor.rt_ac68u_b_received
 #     - entity: sensor.rt_ac68u_b_sent
-    
+
+  - type: 'custom:zha-network-visualization-card' 
+    panel: true
 
