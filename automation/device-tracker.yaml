@@ -8,7 +8,7 @@
   trigger:
     platform: zone
     event: enter
-    zone: zone.home1
+    zone: zone.home
     entity_id: device_tracker.sm_g965f
   action:
     service: notify.Telegram
@@ -26,11 +26,35 @@
   trigger:
     platform: zone
     event: leave
-    zone: zone.home1
+    zone: zone.home
     entity_id: device_tracker.sm_g965f
   action:
     service: notify.Telegram
     data_template:
         #message: "Alex phone is {{ states('device_tracker.sm_g965f') }}."
         message: "Alex phone is away."
+        
+- id: alex_phone_work2
+  alias: alex_phone_work2
+  trigger:
+    platform: zone
+    event: enter
+    zone: zone.work2
+    entity_id: device_tracker.sm_g965f
+  action:
+    service: notify.Telegram
+    data_template:
+        message: "Alex phone is at work2."
+        
+- id: alex_phone_left_work2
+  alias: alex_phone_left_work2
+  trigger:
+    platform: zone
+    event: leave
+    zone: zone.work2
+    entity_id: device_tracker.sm_g965f
+  action:
+    service: notify.Telegram
+    data_template:
+        message: "Alex phone is left work2."
      

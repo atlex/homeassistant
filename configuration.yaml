@@ -13,6 +13,7 @@ homeassistant:
   media_dirs:
     motion: /config/www/cam_captures
 
+zone: !include includes/zones.yaml
 group: !include groups.yaml
 automation: !include_dir_merge_list automation
 script: !include scripts.yaml

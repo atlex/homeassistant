@@ -1,0 +1,11 @@
+  - name: Home
+    latitude: !secret home_latitude
+    longitude: !secret home_longitude
+    radius: !secret home_radius
+    icon: mdi:account-multiple
+    
+  - name: work2
+    latitude: !secret work2_latitude
+    longitude: !secret work2_longitude
+    radius: !secret work2_radius
+    icon: mdi:home
