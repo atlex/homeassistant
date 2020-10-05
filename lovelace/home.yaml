@@ -7,11 +7,18 @@ cards:
   - type: weather-forecast
     entity: weather.openweathermap
     secondary_info_attribute: humidity
-    #show_forecast: true
+  
+  - type: sensor
+    entity: sensor.openweathermap_pressure
+    graph: line 
     
-  - type: weather-forecast  
-    entity: weather.home
-    #show_forecast: true
+  - type: sensor
+    entity: sensor.openweathermap_wind_speed
+    graph: line 
+    
+#   - type: weather-forecast  
+#     entity: weather.home
+#     #show_forecast: true
 
   # Street Temp
   - type: sensor
@@ -22,6 +29,13 @@ cards:
   - type: sensor
     entity: sensor.humidity_158d0001b91127
     graph: line 
+
+# Livingroom Temp
+  - type: sensor
+    entity: sensor.mi_t_3f59c880c04e
+# Livingroom Hum
+  - type: sensor
+    entity: sensor.mi_h_3f59c880c04e
 
   # Sun
   - type: history-graph

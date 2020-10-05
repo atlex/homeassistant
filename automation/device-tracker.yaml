@@ -1,10 +1,15 @@
 - id: alex_phone_home
   alias: alex_phone_home
+#   trigger:
+#     platform: state
+#     entity_id: device_tracker.sm_g965f
+#     #from: 'not_home'
+#     to: 'home1'
   trigger:
-    platform: state
+    platform: zone
+    event: enter
+    zone: zone.home1
     entity_id: device_tracker.sm_g965f
-    #from: 'not_home'
-    to: 'home1'
   action:
     service: notify.Telegram
     data_template:
@@ -13,11 +18,16 @@
 
 - id: alex_phone_not_home
   alias: alex_phone_not_home
+#   trigger:
+#     platform: state
+#     entity_id: device_tracker.sm_g965f
+#     #from: 'home1'
+#     to: 'not_home'
   trigger:
-    platform: state
+    platform: zone
+    event: leave
+    zone: zone.home1
     entity_id: device_tracker.sm_g965f
-    #from: 'home1'
-    to: 'not_home'
   action:
     service: notify.Telegram
     data_template:
