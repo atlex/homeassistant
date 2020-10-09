@@ -107,6 +107,11 @@ cards:
 #     - entity: sensor.rt_ac68u_b_received
 #     - entity: sensor.rt_ac68u_b_sent
 
+  - type: history-graph
+    title: rpi power status
+    entities:
+    - entity: binary_sensor.rpi_power_status
+
   - type: 'custom:zha-network-visualization-card' 
     panel: true
 

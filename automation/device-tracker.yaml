@@ -1,38 +1,26 @@
-- id: alex_phone_home
-  alias: alex_phone_home
+# - id: alex_phone_home
+#   alias: alex_phone_home
 #   trigger:
-#     platform: state
+#     platform: zone
+#     event: enter
+#     zone: zone.home
 #     entity_id: device_tracker.sm_g965f
-#     #from: 'not_home'
-#     to: 'home1'
-  trigger:
-    platform: zone
-    event: enter
-    zone: zone.home
-    entity_id: device_tracker.sm_g965f
-  action:
-    service: notify.Telegram
-    data_template:
-        #message: "Alex's phone state is {{ states('device_tracker.sm_g965f') }}."
-        message: "Alex phone is at home."
+#   action:
+#     service: notify.Telegram
+#     data_template:
+#         message: "Alex phone is at home."
 
-- id: alex_phone_not_home
-  alias: alex_phone_not_home
+# - id: alex_phone_not_home
+#   alias: alex_phone_not_home
 #   trigger:
-#     platform: state
+#     platform: zone
+#     event: leave
+#     zone: zone.home
 #     entity_id: device_tracker.sm_g965f
-#     #from: 'home1'
-#     to: 'not_home'
-  trigger:
-    platform: zone
-    event: leave
-    zone: zone.home
-    entity_id: device_tracker.sm_g965f
-  action:
-    service: notify.Telegram
-    data_template:
-        #message: "Alex phone is {{ states('device_tracker.sm_g965f') }}."
-        message: "Alex phone is away."
+#   action:
+#     service: notify.Telegram
+#     data_template:
+#         message: "Alex phone is away."
         
 - id: alex_phone_work2
   alias: alex_phone_work2
