@@ -16,7 +16,7 @@ homeassistant:
 zone: !include includes/zones.yaml
 group: !include groups.yaml
 automation: !include_dir_merge_list automation
-script: !include scripts.yaml
+script: !include_dir_merge_named includes/scripts
 scene: !include scenes.yaml
 sensor: !include_dir_merge_list includes/sensor
 camera: !include includes/cameras.yaml
@@ -85,15 +85,16 @@ webostv:
       broadcast_port: 9
 
 # Samsung TV
-samsungtv:
-  host: 192.168.1.7
-  name: Samsung TV
-  turn_on_action:
-    service: wake_on_lan.send_magic_packet
-    data:
-      mac: 04:20:9A:28:11:FB 
-      broadcast_address: 192.168.1.255
-      broadcast_port: 9
+# samsungtv:
+#   host: 192.168.1.7
+#   name: Samsung TV
+#   turn_on_action:
+#     service: wake_on_lan.send_magic_packet
+#     data:
+#       #mac: 04:20:9A:28:11:FB 
+#       mac: BC:14:85:E8:CE:2B
+#       broadcast_address: 192.168.1.255
+#       broadcast_port: 9
 
 # Sonoff
 sonoff:

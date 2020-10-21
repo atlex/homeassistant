@@ -1,32 +1,55 @@
 title: Cams
 path: cams
-icon: mdi:webcam
+icon: mdi:cctv
+#icon: mdi:webcam
 cards:
   # Kids Main 
   - type: entities
     entities:
     - entity: camera.reokids_profile000_mainstream
+    
+  - type: entities
+    entities:
+    - entity: script.reokids_photo
+    - entity: script.reokids_video
+    
   # Kids Sub     
   - type: picture-entity
     entity: camera.reokids_profile001_substream
-    aspect_ratio: 50%
+    camera_view: live 
+    show_state: false
     
   # Street Main
   - type: entities
     entities:
     - entity: camera.reostreet_profile000_mainstream
+    
+  - type: entities
+    show_header_toggle: false
+    entities:
+    - entity: script.reostreet_photo
+    - entity: script.reostreet_video
+    
   # Street Sub     
   - type: picture-entity
     entity: camera.reostreet_profile001_substream
-    aspect_ratio: 50%
+    camera_view: live 
+    show_state: false
     
   # Kitchen HD
   - type: entities
     entities:
     - entity: camera.yi720hd
+    
+  - type: entities
+    entities:
+    - entity: script.yi720hd_photo
+    - entity: script.yi720hd_video
+    
   # Kitchen SD
   - type: picture-entity
     entity: camera.yi720sd
-    aspect_ratio: 50%
+    camera_view: live 
+    show_state: false
 
     

@@ -1,0 +1,53 @@
+# reoKids
+  reokids_photo:
+    alias: reokids_photo
+    sequence:
+      - service: camera.snapshot
+        data:
+          entity_id: camera.reokids_profile000_mainstream
+          filename: "/config/www/cam_captures/reoKids.jpg"
+
+  reokids_video:
+    alias: reokids_video
+    sequence:
+      - service: camera.record
+        data:
+          entity_id: camera.reokids_profile000_mainstream
+          filename: "/config/www/cam_captures/reoKids.mp4"
+          duration: 10
+          
+# reoStreet
+  reostreet_photo:
+    alias: reostreet_photo
+    sequence:
+      - service: camera.snapshot
+        data:
+          entity_id: camera.reostreet_profile000_mainstream
+          filename: "/config/www/cam_captures/reoStreet.jpg"
+
+  reostreet_video:
+    alias: reostreet_video
+    sequence:
+      - service: camera.record
+        data:
+          entity_id: camera.reostreet_profile000_mainstream
+          filename: "/config/www/cam_captures/reoStreet.mp4"
+          duration: 10
+
+# yi720hd
+  yi720hd_photo:
+    alias: yi720hd_photo
+    sequence:
+      - service: camera.snapshot
+        data:
+          entity_id: camera.yi720hd
+          filename: "/config/www/cam_captures/yi720hd.jpg"
+
+  yi720hd_video:
+    alias: yi720hd_video
+    sequence:
+      - service: camera.record
+        data:
+          entity_id: camera.yi720hd
+          filename: "/config/www/cam_captures/yi720hd.mp4"
+          duration: 10

@@ -23,8 +23,8 @@
 #     message: "Kids temperature is {{ states('sensor.temperature_158d00019f8776') }}%."
   - service: camera.record
     data:
-      entity_id: camera.reokids_2
-      filename: "/config/www/cam_captures/reokids.mp4"
+      entity_id: camera.reokids_profile001_substream
+      filename: "/config/www/cam_captures/reoKids.mp4"
       duration: 10
   - delay: 00:00:20      
   - service: notify.Telegram
@@ -32,7 +32,7 @@
       message: "Video"
       data:
         video:
-        - file: "/config/www/cam_captures/reokids.mp4"
+        - file: "/config/www/cam_captures/reoKids.mp4"
           caption: "Kids temperature is {{ states('sensor.temperature_158d00019f8776') }}%."
 
       
