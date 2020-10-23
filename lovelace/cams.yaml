@@ -58,3 +58,9 @@ cards:
     - entity: script.all_cams_photo
     - entity: script.all_cams_video
     
+# All cams Telegram
+  - type: entities
+    entities:
+    - entity: script.telegram_all_cams_photo
+    - entity: script.telegram_all_cams_video
+    

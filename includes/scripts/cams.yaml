@@ -1,6 +1,7 @@
 # reoKids
   reokids_photo:
     alias: reokids_photo
+    icon: "mdi:webcam"
     sequence:
       - service: camera.snapshot
         data:
@@ -9,6 +10,7 @@
 
   reokids_video:
     alias: reokids_video
+    icon: "mdi:cctv"
     sequence:
       - service: camera.record
         data:
@@ -19,6 +21,7 @@
 # reoStreet
   reostreet_photo:
     alias: reostreet_photo
+    icon: "mdi:webcam"
     sequence:
       - service: camera.snapshot
         data:
@@ -27,6 +30,7 @@
 
   reostreet_video:
     alias: reostreet_video
+    icon: "mdi:cctv"
     sequence:
       - service: camera.record
         data:
@@ -37,6 +41,7 @@
 # yi720hd
   yi720hd_photo:
     alias: yi720hd_photo
+    icon: "mdi:webcam"
     sequence:
       - service: camera.snapshot
         data:
@@ -45,6 +50,7 @@
 
   yi720hd_video:
     alias: yi720hd_video
+    icon: "mdi:cctv"
     sequence:
       - service: camera.record
         data:
@@ -55,37 +61,32 @@
 # All cams
   all_cams_photo:
     alias: all_cams_photo
+    icon: "mdi:webcam"
     sequence:
-      - service: camera.snapshot
-        data:
-          entity_id: camera.reokids_profile000_mainstream
-          filename: "/config/www/cam_captures/reoKids.jpg"
-      - service: camera.snapshot
-        data:
-          entity_id: camera.reostreet_profile001_substream
-          filename: "/config/www/cam_captures/reoStreet.jpg"
-      - service: camera.snapshot
-        data:
-          entity_id: camera.yi720hd
-          filename: "/config/www/cam_captures/yi720hd.jpg"
+      - service: script.turn_on
+        entity_id: script.reokids_photo
+      - wait_template: "{{ is_state('script.reokids_photo', 'off') }}"
+    
+      - service: script.turn_on
+        entity_id: script.reostreet_photo
+      - wait_template: "{{ is_state('script.reostreet_photo', 'off') }}"
+    
+      - service: script.turn_on
+        entity_id: script.yi720hd_photo
+      - wait_template: "{{ is_state('script.yi720hd_photo', 'off') }}"
           
   all_cams_video:
     alias: all_cams_video
+    icon: "mdi:cctv"
     sequence:
-      - service: camera.record
-        data:
-          entity_id: camera.reokids_profile000_mainstream
-          filename: "/config/www/cam_captures/reoKids.mp4"
-          duration: 10
-      - delay: 00:00:05
-      - service: camera.record
-        data:
-          entity_id: camera.reostreet_profile001_substream
-          filename: "/config/www/cam_captures/reoStreet.mp4"
-          duration: 10
-      - delay: 00:00:05
-      - service: camera.record
-        data:
-          entity_id: camera.yi720hd
-          filename: "/config/www/cam_captures/yi720hd.mp4"
-          duration: 10
+      - service: script.turn_on
+        entity_id: script.reokids_video
+      - wait_template: "{{ is_state('script.reokids_video', 'off') }}"
+    
+      - service: script.turn_on
+        entity_id: script.reostreet_video
+      - wait_template: "{{ is_state('script.reostreet_video', 'off') }}"
+    
+      - service: script.turn_on
+        entity_id: script.yi720hd_video
+      - wait_template: "{{ is_state('script.yi720hd_video', 'off') }}"
