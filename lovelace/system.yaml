@@ -113,5 +113,25 @@ cards:
     - entity: binary_sensor.rpi_power_status
 
   - type: 'custom:zha-network-visualization-card' 
-    panel: true
+    #panel: true
+    
+  - type: 'custom:zha-network-card'
+    clickable: true
+    sort_by: available
+    columns:
+      - name: Name
+        prop: name
+      - attr: rssi
+        name: RSSI
+      - attr: lqi
+        name: LQI
+      - attr: available
+        id: available
+        modify: x || "false"
+        name: Online
+      - attr: last_seen
+        name: Last Seen
+
+
+
 

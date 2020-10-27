@@ -36,6 +36,8 @@ lovelace:
   resources:
     - url: /local/zha-network-visualization-card/zha-network-visualization-card.js
       type: module
+    - url: /local/zha-network-card.js
+      type: js
 
 # Xiaomi Philips Ceiling LED
 light:
