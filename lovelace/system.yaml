@@ -111,9 +111,6 @@ cards:
     title: rpi power status
     entities:
     - entity: binary_sensor.rpi_power_status
-
-  - type: 'custom:zha-network-visualization-card' 
-    #panel: true
     
   - type: 'custom:zha-network-card'
     clickable: true

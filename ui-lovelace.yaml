@@ -7,4 +7,5 @@ views:
   - !include lovelace/kitchen.yaml
   - !include lovelace/cams.yaml
   - !include lovelace/system.yaml
+  - !include lovelace/zigbee.yaml
   
