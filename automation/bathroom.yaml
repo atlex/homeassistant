@@ -59,16 +59,37 @@
     - service: notify.Telegram
       data_template:
         message: "Bathroom Fan is {{ states('switch.sonoff_1000b6d861') }}."
-        
-- id: bathroom_water_leak
-  alias: bathroom_water_leak
+
+# Water leak        
+- id: bathroom_water_leak_on
+  alias: bathroom_water_leak_on
   trigger:
   - platform: state
     entity_id: binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone
-    #from: "off"
-    #to: "on"
+    from: "off"
+    to: "on"
   action:
+    - service: light.turn_on
+      entity_id: light.gateway_light_34ce008141db
+      data:
+        color_name: red
     - service: notify.Telegram
       data_template:
-        message: "Bathroom Water leak is {{ states('binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone') }}."
+        #message: "Bathroom Water leak is {{ states('binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone') }}."
+        message: "WARNING! Water in the Bathroom!"
+
+- id: bathroom_water_leak_off
+  alias: bathroom_water_leak_off
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone
+    from: "on"
+    to: "of"
+  action:
+    - service: light.turn_off
+      entity_id: light.gateway_light_34ce008141db
+    - service: notify.Telegram
+      data_template:
+        #message: "Bathroom Water leak is {{ states('binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone') }}."
+        message: "No Water in the Bathroom."
 
