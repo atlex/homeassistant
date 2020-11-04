@@ -12,8 +12,19 @@ cards:
     entity: sensor.humidity_158d00019f8776
     graph: line
     
-  # Kids ceiling light    
-  - type: light
-    entity: light.xiaomi_philips_ceiling_led
-    icon: 'mdi:ceiling-light'
+# Kids ceiling light
+  - type: vertical-stack
+    cards:
+      - type: light
+        entity: light.xiaomi_philips_ceiling_led
+        icon: 'mdi:ceiling-light'
+      - type: entities
+        entities:
+        - entity: script.kids_bright_light
+          name: 'Bright'
+        - entity: script.kids_warm_light
+          name: 'Warm'
+        - entity: script.kids_midnight_light
+          name: 'Midnight'
+
     

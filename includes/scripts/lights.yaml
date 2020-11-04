@@ -1,0 +1,29 @@
+# Kids Bright Light
+  kids_bright_light:
+    alias: kids_bright_light
+    icon: "mdi:brightness-5"
+    sequence:
+      - service: xiaomi_miio.light_set_scene
+        data:
+          entity_id: light.xiaomi_philips_ceiling_led
+          scene: 1
+
+# Kids Warm Light          
+  kids_warm_light:
+    alias: kids_warm_light
+    icon: "mdi:brightness-6"
+    sequence:
+      - service: xiaomi_miio.light_set_scene
+        data:
+          entity_id: light.xiaomi_philips_ceiling_led
+          scene: 3
+
+# Kids Midnigh Light          
+  kids_midnight_light:
+    alias: kids_midnight_light
+    icon: "mdi:brightness-4"
+    sequence:
+      - service: xiaomi_miio.light_set_scene
+        data:
+          entity_id: light.xiaomi_philips_ceiling_led
+          scene: 4
