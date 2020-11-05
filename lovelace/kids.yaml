@@ -21,10 +21,5 @@ cards:
       - type: entities
         entities:
         - entity: script.kids_bright_light
-          name: 'Bright'
         - entity: script.kids_warm_light
-          name: 'Warm'
         - entity: script.kids_midnight_light
-          name: 'Midnight'
-
-    

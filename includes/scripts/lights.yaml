@@ -1,6 +1,6 @@
 # Kids Bright Light
   kids_bright_light:
-    alias: kids_bright_light
+    alias: Bright
     icon: "mdi:brightness-5"
     sequence:
       - service: xiaomi_miio.light_set_scene
@@ -10,7 +10,7 @@
 
 # Kids Warm Light          
   kids_warm_light:
-    alias: kids_warm_light
+    alias: Warm
     icon: "mdi:brightness-6"
     sequence:
       - service: xiaomi_miio.light_set_scene
@@ -20,7 +20,7 @@
 
 # Kids Midnigh Light          
   kids_midnight_light:
-    alias: kids_midnight_light
+    alias: Midnight
     icon: "mdi:brightness-4"
     sequence:
       - service: xiaomi_miio.light_set_scene

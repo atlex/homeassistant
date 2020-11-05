@@ -35,57 +35,6 @@
         - file: "/config/www/cam_captures/reoKids.mp4"
           caption: "Kids temperature is {{ states('sensor.temperature_158d00019f8776') }}%."
 
-      
-# # Light Bright On
-# - id: kids_left_button_on
-#   alias: kids_left_button_on
-#   trigger:
-#   - platform: event
-#     event_type: xiaomi_aqara.click
-#     event_data:
-#       entity_id: binary_sensor.wall_switch_left_158d0001640452
-#       click_type: single
-#   - platform: template
-#     value_template: '{{ states.light.xiaomi_philips_ceiling_led.attributes.scene | int != 1 }}'    
-#   action:
-#   - service: xiaomi_miio.light_set_scene
-#     entity_id: light.xiaomi_philips_ceiling_led
-#     data:
-#       scene: 1
-    
-# # Light Bright Off
-# - id: kids_left_button_off
-#   alias: kids_left_button_off
-#   trigger:
-#   - platform: event
-#     event_type: xiaomi_aqara.click
-#     event_data:
-#       entity_id: binary_sensor.wall_switch_left_158d0001640452
-#       click_type: single
-#   condition:
-#     - condition: state
-#       entity_id: light.xiaomi_philips_ceiling_led
-#       state: 'on'      
-#   action:
-#   - service: light.turn_off
-#     entity_id: light.xiaomi_philips_ceiling_led
-
-# # Light Warm On
-# - id: kids_right_button_warm
-#   alias: kids_right_button_warm
-#   trigger:
-#   - platform: event
-#     event_type: xiaomi_aqara.click
-#     event_data:
-#       entity_id: binary_sensor.wall_switch_right_158d0001640452
-#       click_type: single
-#   action:
-#   - service: xiaomi_miio.light_set_scene
-#     entity_id: light.xiaomi_philips_ceiling_led
-#     data:
-#       scene: 3
-      
-
 # Light On/Off
 - id: kids_light_on_off
   alias: kids_light_on_off
@@ -109,10 +58,8 @@
       click_type: single
       entity_id: binary_sensor.wall_switch_right_158d0001640452
   action:
-  - service: xiaomi_miio.light_set_scene
-    entity_id: light.xiaomi_philips_ceiling_led
-    data:
-      scene: 1
+  - service: script.turn_on
+    entity_id: script.kids_bright_light
 
 # Light Warm
 - id: kids_light_warm
@@ -124,7 +71,5 @@
       click_type: both
       entity_id: binary_sensor.wall_switch_both_158d0001640452
   action:
-  - service: xiaomi_miio.light_set_scene
-    entity_id: light.xiaomi_philips_ceiling_led
-    data:
-      scene: 3
+  - service: script.turn_on
+    entity_id: script.kids_warm_light
