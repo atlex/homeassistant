@@ -15,16 +15,17 @@ cards:
   # Switches
   - type: entities  
     entities:
-    - entity: switch.44533331dc4f22f0d71c
+    #- entity: switch.44533331dc4f22f0d71c
     - entity: switch.thermopotlocal
     
-    - entity: switch.81353660600194c84e46
+    #- entity: switch.81353660600194c84e46
     - entity: switch.multicooklocal
     
     - entity: switch.plug_158d00010dec94
+    
     - entity: switch.641880212cf432c9d15c_1
     
-    - entity: switch.641880212cf432c9d15c_2
+    #- entity: switch.641880212cf432c9d15c_2
     - entity: switch.fridge_owenlocal
     
     - entity: switch.tz3000_g5xawfcq_ts0121_f29613fe_on_off
