@@ -31,6 +31,7 @@ cards:
     show_header_toggle: false
     entities:
     - entity: switch.36007448840d8e799d98
+    - entity: switch.washmashinelocal
 
 # Water leak
   - type: history-graph

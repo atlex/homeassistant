@@ -103,13 +103,25 @@ media_player.lg_tv:
 # Tuya
 switch.44533331dc4f22f0d71c:
   icon: mdi:kettle
+switch.thermopotlocal:
+  icon: mdi:kettle
+  
 switch.641880212cf432c9d15c_2:
   icon: mdi:fridge
+switch.fridge_owenlocal:
+  icon: mdi:fridge
+  
 switch.641880212cf432c9d15c_1:
   icon: mdi:toaster-oven
+  
 switch.81353660600194c84e46:
   icon: mdi:stove
+switch.multicooklocal:
+  icon: mdi:stove
+  
 switch.36007448840d8e799d98:
+  icon: mdi:washing-machine
+switch.washmashinelocal:
   icon: mdi:washing-machine
 
 # COVID
