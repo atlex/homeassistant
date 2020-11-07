@@ -92,9 +92,12 @@ device_tracker.sm_g965f:
 switch.sonoff_1000b6d861:
   friendly_name: Bathroom Fan
   icon: mdi:fan
-  
 switch.sonoff_1000d4b908_1:
   friendly_name: Bedroom Lamp
+  icon: mdi:lamp
+switch.sonoff_1000d4b717_1:
+  friendly_name: Street Lamp
+  icon: mdi:lamp
   
 # LG TV
 media_player.lg_tv:

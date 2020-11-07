@@ -72,10 +72,13 @@ cards:
     entities:
     - entity: device_tracker.sm_g965f
   
-  # Switch plug for Gateway
   - type: entities
+    show_header_toggle: false
     entities:
+# Switch plug for Gateway
       - switch.xiaomi_miio_switch
+# Switch for Street Lamp
+      - switch.sonoff_1000d4b717_1
       
  # COVID   
   - type: history-graph
