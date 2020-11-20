@@ -23,10 +23,10 @@ cards:
     
     - entity: switch.plug_158d00010dec94
     
-    - entity: switch.641880212cf432c9d15c_1
-    
+    #- entity: switch.641880212cf432c9d15c_1
     #- entity: switch.641880212cf432c9d15c_2
-    - entity: switch.fridge_owenlocal
+    - entity: switch.fridgelocal
+    - entity: switch.ovenlocal
     
     - entity: switch.tz3000_g5xawfcq_ts0121_f29613fe_on_off
     show_header_toggle: false

@@ -6,12 +6,16 @@ sensor.temperature_158d0001b91127:
   friendly_name: Street Temperature
   device_class: temperature
   
-sensor.humidity_158d00019f8776:
+#sensor.humidity_158d00019f8776:
+sensor.lumi_lumi_sens_76879f01_humidity:
   friendly_name: Kids Humidity
   device_class: humidity
-sensor.temperature_158d00019f8776:
+#sensor.temperature_158d00019f8776:
+sensor.lumi_lumi_sens_76879f01_temperature:
   friendly_name: Kids Temperature
   device_class: temperature
+sensor.lumi_lumi_sens_76879f01_power:
+  friendly_name: Kids Temperature battery
   
 sensor.humidity_158d0001b8cd45:
   friendly_name: Bathroom Humidity
@@ -104,26 +108,28 @@ media_player.lg_tv:
   icon: mdi:television
   
 # Tuya
-switch.44533331dc4f22f0d71c:
-  icon: mdi:kettle
+# switch.44533331dc4f22f0d71c:
+#   icon: mdi:kettle
 switch.thermopotlocal:
   icon: mdi:kettle
   
-switch.641880212cf432c9d15c_2:
-  icon: mdi:fridge
-switch.fridge_owenlocal:
+# switch.641880212cf432c9d15c_2:
+#   icon: mdi:fridge
+switch.fridgelocal:
   icon: mdi:fridge
   
-switch.641880212cf432c9d15c_1:
+# switch.641880212cf432c9d15c_1:
+#   icon: mdi:toaster-oven
+switch.ovenlocal:
   icon: mdi:toaster-oven
   
-switch.81353660600194c84e46:
-  icon: mdi:stove
+# switch.81353660600194c84e46:
+#   icon: mdi:stove
 switch.multicooklocal:
   icon: mdi:stove
   
-switch.36007448840d8e799d98:
-  icon: mdi:washing-machine
+# switch.36007448840d8e799d98:
+#   icon: mdi:washing-machine
 switch.washmashinelocal:
   icon: mdi:washing-machine
 

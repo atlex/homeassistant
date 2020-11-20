@@ -33,9 +33,11 @@ cards:
 # Livingroom Temp
   - type: sensor
     entity: sensor.mi_t_3f59c880c04e
+    graph: line
 # Livingroom Hum
   - type: sensor
     entity: sensor.mi_h_3f59c880c04e
+    graph: line
 
   # Sun
   - type: history-graph
