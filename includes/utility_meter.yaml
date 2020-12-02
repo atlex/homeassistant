@@ -24,15 +24,28 @@
     tariffs:
       - day
       
-# Microwave
-  daily_microwave_switch:
+# Bedroom Desk Socket
+  daily_bedroom_desk_switch:
     source: sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement
     cycle: daily
     tariffs:
       - day
       
-  monthly_microwave_switch:
+  monthly_bedroom_desk_switch:
     source: sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement
+    cycle: monthly
+    tariffs:
+      - day
+      
+# Street Lamp Socket
+  daily_street_lamp_switch:
+    source: sensor.tz3000_vtscrpmw_ts0121_electrical_measurement
+    cycle: daily
+    tariffs:
+      - day
+      
+  monthly_street_lamp_switch:
+    source: sensor.tz3000_vtscrpmw_ts0121_electrical_measurement
     cycle: monthly
     tariffs:
       - day

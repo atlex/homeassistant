@@ -25,3 +25,14 @@ cards:
       name: occupancy
     - entity: binary_sensor.lumi_lumi_sensor_motion_c508db01_ias_zone
       name: zone
+      
+# Bedroom Desk Socket
+  - type: entities  
+    entities:
+    - entity: switch.tz3000_g5xawfcq_ts0121_f29613fe_on_off
+    footer:
+      type: graph
+      entity: sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement
+      hours_to_show: 24
+      detail: 1
+

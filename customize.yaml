@@ -100,8 +100,8 @@ switch.sonoff_1000d4b908_1:
   friendly_name: Bedroom Lamp
   icon: mdi:lamp
 switch.sonoff_1000d4b717_1:
-  friendly_name: Street Lamp
-  icon: mdi:lamp
+  friendly_name: Street WiFi
+  icon: mdi:wifi
   
 # LG TV
 media_player.lg_tv:
@@ -196,20 +196,22 @@ sensor.lumi_lumi_sensor_motion_c508db01_power:
 binary_sensor.lumi_lumi_sensor_motion_c508db01_ias_zone:
   friendly_name: Bedroom Motion Zone
 
-# BlitzWolf SPH13 Microwave
-switch.tz3000_g5xawfcq_ts0121_f29613fe_on_off:
-  friendly_name: Microwave
-  icon: mdi:microwave
-sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement:
-  friendly_name: Microwave power
-sensor.tz3000_g5xawfcq_ts0121_f29613fe_smartenergy_metering:
-  friendly_name: Microwave energy metering
 
-# BlitzWolf SPH13 Microwave Power 
-sensor.daily_microwave_switch_day:
-  friendly_name: Microwave
-sensor.monthly_microwave_switch_day:
-  friendly_name: Microwave  
+# Bedroom Desk Socket
+switch.tz3000_g5xawfcq_ts0121_f29613fe_on_off:
+  friendly_name: Bedroom Desk
+  icon: mdi:power-socket-de
+sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement:
+  friendly_name: Bedroom Desk power
+sensor.tz3000_g5xawfcq_ts0121_f29613fe_smartenergy_metering:
+  friendly_name: Bedroom Desk energy metering
+
+# Bedroom Desk Socket Power 
+sensor.daily_bedroom_desk_switch_day:
+  friendly_name: Bedroom Desk
+sensor.monthly_bedroom_desk_switch_day:
+  friendly_name: Bedroom Desk  
+
 
 # Aqara Bathroom Water leak sensor
 binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone:
@@ -217,4 +219,20 @@ binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone:
   icon: mdi:water-outline
 sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_power:
   friendly_name: Bathroom Water leak battery
+  
+  
+# Street Lamp Socket
+switch.tz3000_vtscrpmw_ts0121_on_off:
+  friendly_name: Street Lamp
+  icon: mdi:lamp
+sensor.tz3000_vtscrpmw_ts0121_electrical_measurement:
+  friendly_name: Street Lamp power
+sensor.tz3000_vtscrpmw_ts0121_smartenergy_metering:
+  friendly_name: Street Lamp energy metering
+
+# Street Lamp Socket Power 
+sensor.daily_street_lamp_switch_day:
+  friendly_name: Street Lamp
+sensor.monthly_street_lamp_switch_day:
+  friendly_name: Street Lamp
  

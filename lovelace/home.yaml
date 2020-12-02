@@ -79,8 +79,10 @@ cards:
     entities:
 # Switch plug for Gateway
       - switch.xiaomi_miio_switch
-# Switch for Street Lamp
+# Switch for Street WiFi
       - switch.sonoff_1000d4b717_1
+# Street Lamp Socket
+      - switch.tz3000_vtscrpmw_ts0121_on_off
       
  # COVID   
   - type: history-graph

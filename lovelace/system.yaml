@@ -9,6 +9,7 @@ cards:
     - entity: sensor.158d00010dec94_load
     - entity: sensor.xiaomi_miio_switch_load
     - entity: sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement
+    - entity: sensor.tz3000_vtscrpmw_ts0121_electrical_measurement
 
 #   # Power consumed
 #   - type: history-graph
@@ -21,14 +22,16 @@ cards:
     entities:
     - entity: sensor.daily_158d00010dec94_day
     - entity: sensor.daily_xiaomi_miio_switch_day
-    - entity: sensor.daily_microwave_switch_day
+    - entity: sensor.daily_bedroom_desk_switch_day
+    - entity: sensor.daily_street_lamp_switch_day
     
   - type: entities
     title: power consumed monthly
     entities:
     - entity: sensor.monthly_158d00010dec94_day
     - entity: sensor.monthly_xiaomi_miio_switch_day
-    - entity: sensor.monthly_microwave_switch_day
+    - entity: sensor.monthly_bedroom_desk_switch_day
+    - entity: sensor.monthly_street_lamp_switch_day
     
 #   - type: history-graph
 #     title: power consumed daily
@@ -119,8 +122,8 @@ cards:
     columns:
       - name: Name
         prop: name
-      - attr: rssi
-        name: RSSI
+      #- attr: rssi
+      #  name: RSSI
       - attr: lqi
         name: LQI
       - attr: available
