@@ -17,12 +17,15 @@ sensor.lumi_lumi_sens_76879f01_temperature:
 sensor.lumi_lumi_sens_76879f01_power:
   friendly_name: Kids Temperature battery
   
-sensor.humidity_158d0001b8cd45:
+sensor.lumi_lumi_sens_humidity:
   friendly_name: Bathroom Humidity
   device_class: humidity
-sensor.temperature_158d0001b8cd45:
+sensor.lumi_lumi_sens_temperature:
   friendly_name: Bathroom Temperature
   device_class: temperature
+sensor.lumi_lumi_sens_power:
+  friendly_name: Bathroom Temperature battery
+  device_class: battery
   
 sensor.humidity_158d00040e1461:
   friendly_name: Bathroom2 Humidity

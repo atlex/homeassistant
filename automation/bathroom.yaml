@@ -2,7 +2,7 @@
   alias: bathroom_hum_above
   trigger: 
     - platform: numeric_state # OR
-      entity_id: sensor.humidity_158d0001b8cd45 #Bathroom
+      entity_id: sensor.lumi_lumi_sens_humidity #Bathroom
       above: 70
     - platform: numeric_state # OR
       entity_id: sensor.humidity_158d00040e1461 #Bathroom2
@@ -13,13 +13,13 @@
     - delay: 00:00:03
     - service: notify.Telegram
       data_template:
-        message: "Bathroom humidity {{ states('sensor.humidity_158d0001b8cd45') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
+        message: "Bathroom humidity {{ states('sensor.lumi_lumi_sens_humidity') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
 
 - id: bathroom_hum_below
   alias: bathroom_hum_below
   trigger:
     - platform: numeric_state
-      entity_id: sensor.humidity_158d0001b8cd45
+      entity_id: sensor.lumi_lumi_sens_humidity #Bathroom
       below: 60
     - platform: numeric_state
       entity_id: sensor.humidity_158d00040e1461
@@ -31,7 +31,7 @@
         entity_id: switch.sonoff_1000b6d861
         state: "on"
       - condition: numeric_state
-        entity_id: sensor.humidity_158d0001b8cd45
+        entity_id: sensor.lumi_lumi_sens_humidity #Bathroom
         below: 60
       - condition: numeric_state
         entity_id: sensor.humidity_158d00040e1461
@@ -42,7 +42,7 @@
     - delay: 00:00:03
     - service: notify.Telegram
       data_template:
-        message: "Bathroom humidity {{ states('sensor.humidity_158d0001b8cd45') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
+        message: "Bathroom humidity {{ states('sensor.lumi_lumi_sens_humidity') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
             
 - id: bathroom_fan_button
   alias: bathroom_fan_button
@@ -84,7 +84,7 @@
   - platform: state
     entity_id: binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone
     from: "on"
-    to: "of"
+    to: "off"
   action:
     - service: light.turn_off
       entity_id: light.gateway_light_34ce008141db

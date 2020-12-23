@@ -30,6 +30,9 @@ logger:
 #     homeassistant.config_entries: debug
 #     zigpy_cc.api: debug
 #     zigpy.application: debug
+#   default: warning
+#   logs:
+#     custom_components.localtuya: debug
 
 lovelace:
   mode: yaml

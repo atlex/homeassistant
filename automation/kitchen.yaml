@@ -76,4 +76,32 @@
         video:
           - file: "/config/www/cam_captures/yi720hd.mp4"
             caption: "Front door is opened."
-          
+
+# # Thermopot On
+# - id: kitchen_thermopot_on
+#   alias: kitchen_thermopot_on
+#   trigger:
+#     - platform: time
+#       at: '07:00:00'
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.thermopotlocal
+#     - delay: 00:00:03
+#     - service: notify.Telegram
+#       data_template:
+#         message: "Thermopot is {{ states('switch.thermopotlocal') }}."
+
+# # Thermopot Off
+# - id: kitchen_thermopot_off
+#   alias: kitchen_thermopot_off
+#   trigger:
+#     - platform: time
+#       at: '07:00:00'
+#   action:
+#     - service: switch.turn_off
+#       entity_id: switch.thermopotlocal
+#     - delay: 00:00:03
+#     - service: notify.Telegram
+#       data_template:
+#         message: "Thermopot is {{ states('switch.thermopotlocal') }}."
+  
