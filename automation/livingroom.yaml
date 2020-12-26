@@ -94,7 +94,7 @@
   trigger:
     - platform: sun
       event: sunset
-      offset: "00:30:00"
+      #offset: "00:30:00"
   action: 
     - service: switch.turn_on
       entity_id: switch.tz3000_vtscrpmw_ts0121_on_off
