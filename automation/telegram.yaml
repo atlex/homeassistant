@@ -30,8 +30,8 @@
       data_template:
         message: |
             Street {{ states('sensor.temperature_158d0001b91127') }}C
-            Kids {{ states('sensor.temperature_158d00019f8776') }}C
-            Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}C, {{ states('sensor.temperature_158d00040e1461') }}C 
+            Kids {{ states('sensor.lumi_lumi_sens_76879f01_temperature') }}C
+            Bathroom {{ states('sensor.lumi_lumi_sens_temperature') }}C, {{ states('sensor.temperature_158d00040e1461') }}C 
             Bedroom {{ states('sensor.temperature_158d00019d3869') }}C
             Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C
             
@@ -48,8 +48,8 @@
       data_template:
         message: |
             Street {{ states('sensor.humidity_158d0001b91127') }}%
-            Kids {{ states('sensor.humidity_158d00019f8776') }}%
-            Bathroom {{ states('sensor.humidity_158d0001b8cd45') }}%, {{ states('sensor.humidity_158d00040e1461') }}%
+            Kids {{ states('sensor.lumi_lumi_sens_76879f01_humidity') }}%
+            Bathroom {{ states('sensor.lumi_lumi_sens_humidity') }}%, {{ states('sensor.humidity_158d00040e1461') }}%
             Bedroom {{ states('sensor.humidity_158d00019d3869') }}%
             Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}%  
 
@@ -66,8 +66,8 @@
       data_template:
         message: |
             Street {{ states('sensor.temperature_158d0001b91127') }}C / {{ states('sensor.humidity_158d0001b91127') }}%
-            Kids {{ states('sensor.temperature_158d00019f8776') }}C / {{ states('sensor.humidity_158d00019f8776') }}%
-            Bathroom {{ states('sensor.temperature_158d0001b8cd45') }}C, {{ states('sensor.temperature_158d00040e1461') }}C / {{ states('sensor.humidity_158d0001b8cd45') }}%, {{ states('sensor.humidity_158d00040e1461') }}% 
+            Kids {{ states('sensor.lumi_lumi_sens_76879f01_temperature') }}C / {{ states('sensor.lumi_lumi_sens_humidity') }}%
+            Bathroom {{ states('sensor.lumi_lumi_sens_temperature') }}C, {{ states('sensor.temperature_158d00040e1461') }}C / {{ states('sensor.lumi_lumi_sens_humidity') }}%, {{ states('sensor.humidity_158d00040e1461') }}% 
             Bedroom {{ states('sensor.temperature_158d00019d3869') }}C / {{ states('sensor.humidity_158d00019d3869') }}%
             Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C / {{ states('sensor.lumi_lumi_sens_975c1804_humidity') }}% 
 
