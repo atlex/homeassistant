@@ -47,12 +47,12 @@ cards:
 #     - entity: sensor.monthly_158d00010dec94_day
 #     - entity: sensor.monthly_xiaomi_miio_switch_day
     
-  # Batteries
+# Batteries
   - type: entities
     entities:
     - entity: sensor.158d0001b91127_battery
     - entity: sensor.lumi_lumi_sens_76879f01_power
-    - entity: sensor.158d00019d3869_battery
+    - entity: sensor.lumi_lumi_sens_69389d01_power # Badroom Temp
     - entity: sensor.lumi_lumi_sens_power # Bathroom Temp
     - entity: sensor.158d00040e1461_battery
     - entity: sensor.158d0001640452_battery

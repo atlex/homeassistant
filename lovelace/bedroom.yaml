@@ -2,22 +2,23 @@ title: Bedroom
 path: bedroom
 icon: mdi:bed-empty
 cards:
-  # Bedroom Temp
+
+# Bedroom Temp
   - type: sensor
-    entity: sensor.temperature_158d00019d3869
+    entity: sensor.lumi_lumi_sens_69389d01_temperature
     graph: line
     
-  # Bedroom Humidity    
+# Bedroom Humidity    
   - type: sensor
-    entity: sensor.humidity_158d00019d3869
+    entity: sensor.lumi_lumi_sens_69389d01_humidity
     graph: line
     
-  # Bedroom lamp
+# Bedroom lamp
   - type: button   
     entity: switch.sonoff_1000d4b908_1
     icon: 'mdi:lamp'
     
-  # Bedroom Motion 
+# Bedroom Motion 
   - type: history-graph
     title: motion
     entities:

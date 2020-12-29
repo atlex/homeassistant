@@ -34,12 +34,12 @@ sensor.temperature_158d00040e1461:
   friendly_name: Bathroom2 Temperature
   device_class: temperature
 
-sensor.humidity_158d00019d3869:
+sensor.lumi_lumi_sens_69389d01_humidity:
   friendly_name: Bedroom Humidity
-  device_class: humidity
-sensor.temperature_158d00019d3869:
+sensor.lumi_lumi_sens_69389d01_temperature:
   friendly_name: Bedroom Temperature
-  device_class: temperature
+sensor.lumi_lumi_sens_69389d01_power:
+  friendly_name: Bedroom Temperature battery
   
 sensor.lumi_lumi_sens_975c1804_humidity:
   friendly_name: Kitchen Humidity
