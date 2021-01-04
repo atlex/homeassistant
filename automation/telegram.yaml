@@ -29,11 +29,12 @@
     - service: notify.Telegram
       data_template:
         message: |
-            Street {{ states('sensor.temperature_158d0001b91127') }}C
-            Kids {{ states('sensor.lumi_lumi_sens_76879f01_temperature') }}C
-            Bathroom {{ states('sensor.lumi_lumi_sens_45cdb801_temperature') }}C, {{ states('sensor.lumi_lumi_sens_61140e04_temperature') }}C 
-            Bedroom {{ states('sensor.lumi_lumi_sens_69389d01_temperature') }}C
-            Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C
+            Street     {{ states('sensor.temperature_158d0001b91127') }}C
+            Livingroom {{ states('sensor.mi_t_3f59c880c04e') }}C
+            Kids       {{ states('sensor.lumi_lumi_sens_76879f01_temperature') }}C
+            Bathroom   {{ states('sensor.lumi_lumi_sens_45cdb801_temperature') }}C, {{ states('sensor.lumi_lumi_sens_61140e04_temperature') }}C 
+            Bedroom    {{ states('sensor.lumi_lumi_sens_69389d01_temperature') }}C
+            Kitchen    {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C
             
 - id: telegram_hum_all_report
   alias: telegram_hum_all_report
@@ -47,11 +48,12 @@
     - service: notify.Telegram
       data_template:
         message: |
-            Street {{ states('sensor.humidity_158d0001b91127') }}%
-            Kids {{ states('sensor.lumi_lumi_sens_76879f01_humidity') }}%
-            Bathroom {{ states('sensor.lumi_lumi_sens_45cdb801_humidity') }}%, {{ states('sensor.lumi_lumi_sens_61140e04_humidity') }}%
-            Bedroom {{ states('sensor.lumi_lumi_sens_69389d01_humidity') }}%
-            Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}%  
+            Street     {{ states('sensor.humidity_158d0001b91127') }}%
+            Livingroom {{ states('sensor.mi_h_3f59c880c04e') }}%
+            Kids       {{ states('sensor.lumi_lumi_sens_76879f01_humidity') }}%
+            Bathroom   {{ states('sensor.lumi_lumi_sens_45cdb801_humidity') }}%, {{ states('sensor.lumi_lumi_sens_61140e04_humidity') }}%
+            Bedroom    {{ states('sensor.lumi_lumi_sens_69389d01_humidity') }}%
+            Kitchen    {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}%  
 
 - id: telegram_clima_all_report
   alias: telegram_clima_all_report
@@ -65,11 +67,12 @@
     - service: notify.Telegram
       data_template:
         message: |
-            Street   {{ states('sensor.temperature_158d0001b91127') }}C / {{ states('sensor.humidity_158d0001b91127') }}%
-            Kids     {{ states('sensor.lumi_lumi_sens_76879f01_temperature') }}C / {{ states('sensor.lumi_lumi_sens_76879f01_humidity') }}%
-            Bathroom {{ states('sensor.lumi_lumi_sens_45cdb801_temperature') }}C / {{ states('sensor.lumi_lumi_sens_45cdb801_humidity') }}%, {{ states('sensor.lumi_lumi_sens_61140e04_temperature') }}C, {{ states('sensor.lumi_lumi_sens_61140e04_humidity') }}%
-            Bedroom  {{ states('sensor.lumi_lumi_sens_69389d01_temperature') }}C / {{ states('sensor.lumi_lumi_sens_69389d01_humidity') }}%
-            Kitchen  {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C / {{ states('sensor.lumi_lumi_sens_975c1804_humidity') }}% 
+            Street     {{ states('sensor.temperature_158d0001b91127') }}C / {{ states('sensor.humidity_158d0001b91127') }}%
+            Livingroom {{ states('sensor.mi_t_3f59c880c04e') }}C / {{ states('sensor.mi_h_3f59c880c04e') }}%
+            Kids       {{ states('sensor.lumi_lumi_sens_76879f01_temperature') }}C / {{ states('sensor.lumi_lumi_sens_76879f01_humidity') }}%
+            Bathroom   {{ states('sensor.lumi_lumi_sens_45cdb801_temperature') }}C / {{ states('sensor.lumi_lumi_sens_45cdb801_humidity') }}%, {{ states('sensor.lumi_lumi_sens_61140e04_temperature') }}C, {{ states('sensor.lumi_lumi_sens_61140e04_humidity') }}%
+            Bedroom    {{ states('sensor.lumi_lumi_sens_69389d01_temperature') }}C / {{ states('sensor.lumi_lumi_sens_69389d01_humidity') }}%
+            Kitchen    {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C / {{ states('sensor.lumi_lumi_sens_975c1804_humidity') }}% 
 
 - id: telegram_sys
   alias: telegram_sys
