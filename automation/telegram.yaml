@@ -31,7 +31,7 @@
         message: |
             Street {{ states('sensor.temperature_158d0001b91127') }}C
             Kids {{ states('sensor.lumi_lumi_sens_76879f01_temperature') }}C
-            Bathroom {{ states('sensor.lumi_lumi_sens_temperature') }}C, {{ states('sensor.temperature_158d00040e1461') }}C 
+            Bathroom {{ states('sensor.lumi_lumi_sens_45cdb801_temperature') }}C, {{ states('sensor.lumi_lumi_sens_61140e04_temperature') }}C 
             Bedroom {{ states('sensor.lumi_lumi_sens_69389d01_temperature') }}C
             Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C
             
@@ -49,7 +49,7 @@
         message: |
             Street {{ states('sensor.humidity_158d0001b91127') }}%
             Kids {{ states('sensor.lumi_lumi_sens_76879f01_humidity') }}%
-            Bathroom {{ states('sensor.lumi_lumi_sens_humidity') }}%, {{ states('sensor.humidity_158d00040e1461') }}%
+            Bathroom {{ states('sensor.lumi_lumi_sens_45cdb801_humidity') }}%, {{ states('sensor.lumi_lumi_sens_61140e04_humidity') }}%
             Bedroom {{ states('sensor.lumi_lumi_sens_69389d01_humidity') }}%
             Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}%  
 
@@ -65,11 +65,11 @@
     - service: notify.Telegram
       data_template:
         message: |
-            Street {{ states('sensor.temperature_158d0001b91127') }}C / {{ states('sensor.humidity_158d0001b91127') }}%
-            Kids {{ states('sensor.lumi_lumi_sens_76879f01_temperature') }}C / {{ states('sensor.lumi_lumi_sens_humidity') }}%
-            Bathroom {{ states('sensor.lumi_lumi_sens_temperature') }}C, {{ states('sensor.temperature_158d00040e1461') }}C / {{ states('sensor.lumi_lumi_sens_humidity') }}%, {{ states('sensor.humidity_158d00040e1461') }}% 
-            Bedroom {{ states('sensor.lumi_lumi_sens_69389d01_temperature') }}C / {{ states('sensor.lumi_lumi_sens_69389d01_humidity') }}%
-            Kitchen {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C / {{ states('sensor.lumi_lumi_sens_975c1804_humidity') }}% 
+            Street   {{ states('sensor.temperature_158d0001b91127') }}C / {{ states('sensor.humidity_158d0001b91127') }}%
+            Kids     {{ states('sensor.lumi_lumi_sens_76879f01_temperature') }}C / {{ states('sensor.lumi_lumi_sens_76879f01_humidity') }}%
+            Bathroom {{ states('sensor.lumi_lumi_sens_45cdb801_temperature') }}C / {{ states('sensor.lumi_lumi_sens_45cdb801_humidity') }}%, {{ states('sensor.lumi_lumi_sens_61140e04_temperature') }}C, {{ states('sensor.lumi_lumi_sens_61140e04_humidity') }}%
+            Bedroom  {{ states('sensor.lumi_lumi_sens_69389d01_temperature') }}C / {{ states('sensor.lumi_lumi_sens_69389d01_humidity') }}%
+            Kitchen  {{ states('sensor.lumi_lumi_sens_975c1804_temperature') }}C / {{ states('sensor.lumi_lumi_sens_975c1804_humidity') }}% 
 
 - id: telegram_sys
   alias: telegram_sys

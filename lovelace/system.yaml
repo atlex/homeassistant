@@ -53,8 +53,8 @@ cards:
     - entity: sensor.158d0001b91127_battery
     - entity: sensor.lumi_lumi_sens_76879f01_power
     - entity: sensor.lumi_lumi_sens_69389d01_power # Badroom Temp
-    - entity: sensor.lumi_lumi_sens_power # Bathroom Temp
-    - entity: sensor.158d00040e1461_battery
+    - entity: sensor.lumi_lumi_sens_45cdb801_power # Bathroom Temp
+    - entity: sensor.lumi_lumi_sens_61140e04_power # Bathroom2 Temp
     - entity: sensor.158d0001640452_battery
     - entity: sensor.158d0001b7585e_battery
     - entity: sensor.158d0001b195a0_battery

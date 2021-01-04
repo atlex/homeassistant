@@ -2,10 +2,10 @@
   alias: bathroom_hum_above
   trigger: 
     - platform: numeric_state # OR
-      entity_id: sensor.lumi_lumi_sens_humidity #Bathroom
+      entity_id: sensor.lumi_lumi_sens_45cdb801_humidity #Bathroom
       above: 70
     - platform: numeric_state # OR
-      entity_id: sensor.humidity_158d00040e1461 #Bathroom2
+      entity_id: sensor.lumi_lumi_sens_61140e04_humidity #Bathroom2
       above: 70
   action:
     - service: switch.turn_on
@@ -13,16 +13,16 @@
     - delay: 00:00:03
     - service: notify.Telegram
       data_template:
-        message: "Bathroom humidity {{ states('sensor.lumi_lumi_sens_humidity') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
+        message: "Bathroom humidity {{ states('sensor.lumi_lumi_sens_45cdb801_humidity') }}% / {{ states('sensor.lumi_lumi_sens_61140e04_humidity') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
 
 - id: bathroom_hum_below
   alias: bathroom_hum_below
   trigger:
     - platform: numeric_state
-      entity_id: sensor.lumi_lumi_sens_humidity #Bathroom
+      entity_id: sensor.lumi_lumi_sens_45cdb801_humidity #Bathroom
       below: 60
     - platform: numeric_state
-      entity_id: sensor.humidity_158d00040e1461
+      entity_id: sensor.lumi_lumi_sens_61140e04_humidity #Bathroom2
       below: 60
   condition:
     condition: and
@@ -31,10 +31,10 @@
         entity_id: switch.sonoff_1000b6d861
         state: "on"
       - condition: numeric_state
-        entity_id: sensor.lumi_lumi_sens_humidity #Bathroom
+        entity_id: sensor.lumi_lumi_sens_45cdb801_humidity #Bathroom
         below: 60
       - condition: numeric_state
-        entity_id: sensor.humidity_158d00040e1461
+        entity_id: sensor.lumi_lumi_sens_61140e04_humidity #Bathroom2
         below: 60
   action:
     - service: switch.turn_off
@@ -42,7 +42,7 @@
     - delay: 00:00:03
     - service: notify.Telegram
       data_template:
-        message: "Bathroom humidity {{ states('sensor.lumi_lumi_sens_humidity') }}% / {{ states('sensor.humidity_158d00040e1461') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
+        message: "Bathroom humidity {{ states('sensor.lumi_lumi_sens_45cdb801_humidity') }}% / {{ states('sensor.lumi_lumi_sens_61140e04_humidity') }}%. Fan is {{ states('switch.sonoff_1000b6d861') }}."
             
 - id: bathroom_fan_button
   alias: bathroom_fan_button

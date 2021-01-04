@@ -4,24 +4,22 @@ icon: mdi:shower-head
 cards:
 # Temp
   - type: sensor
-    #entity: sensor.temperature_158d0001b8cd45
-    entity: sensor.lumi_lumi_sens_temperature
+    entity: sensor.lumi_lumi_sens_45cdb801_temperature
     graph: line
 
 # Hum
   - type: sensor
-    #entity: sensor.humidity_158d0001b8cd45
-    entity: sensor.lumi_lumi_sens_humidity
+    entity: sensor.lumi_lumi_sens_45cdb801_humidity
     graph: line
     
 # Temp2
   - type: sensor
-    entity: sensor.temperature_158d00040e1461
+    entity: sensor.lumi_lumi_sens_61140e04_temperature
     graph: line
 
 # Hum2
   - type: sensor
-    entity: sensor.humidity_158d00040e1461
+    entity: sensor.lumi_lumi_sens_61140e04_humidity
     graph: line
   
 # Sonoff
