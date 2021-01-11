@@ -236,3 +236,12 @@ sensor.daily_street_lamp_switch_day:
 sensor.monthly_street_lamp_switch_day:
   friendly_name: Street Lamp
  
+# Test Temperature sensor
+sensor.tz2000_a476raq2_ts0201_temperature:
+  friendly_name: Test Temperature
+sensor.tz2000_a476raq2_ts0201_humidity:
+  friendly_name: Test Humidity
+sensor.tz2000_a476raq2_ts0201_power:
+  friendly_name: Test Temperature battery
+  
+  
