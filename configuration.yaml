@@ -114,8 +114,6 @@ speedtestdotnet:
     - download
     - upload
 
-# ZHA network map  
-zha_map:
 
 
 
