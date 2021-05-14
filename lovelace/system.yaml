@@ -3,13 +3,14 @@ path: system
 icon: mdi:laptop
 cards:
 
-  # Power
+  # Current consumption
   - type: entities
+    title: Current consumption
     entities:
     - entity: sensor.158d00010dec94_load
     - entity: sensor.xiaomi_miio_switch_load
-    - entity: sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement
-    - entity: sensor.tz3000_vtscrpmw_ts0121_electrical_measurement
+    - entity: sensor.bedroom_desk_socket_power # Bedroom Desk Socket
+    - entity: sensor.street_lamp_socket_power # Street Lamp Socket
 
 #   # Power consumed
 #   - type: history-graph
