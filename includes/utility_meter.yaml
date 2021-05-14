@@ -26,26 +26,27 @@
       
 # Bedroom Desk Socket
   daily_bedroom_desk_switch:
-    source: sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement
+    source: sensor.bedroom_desk_socket_energy
     cycle: daily
     tariffs:
       - day
       
   monthly_bedroom_desk_switch:
-    source: sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement
+    source: sensor.bedroom_desk_socket_energy
     cycle: monthly
     tariffs:
       - day
       
 # Street Lamp Socket
   daily_street_lamp_switch:
-    source: sensor.tz3000_vtscrpmw_ts0121_electrical_measurement
+    source: sensor.street_lamp_socket_energy
     cycle: daily
     tariffs:
       - day
       
   monthly_street_lamp_switch:
-    source: sensor.tz3000_vtscrpmw_ts0121_electrical_measurement
+    source: sensor.street_lamp_socket_energy
     cycle: monthly
     tariffs:
       - day
+      
