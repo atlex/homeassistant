@@ -2,15 +2,16 @@ title: Kitchen
 path: kitchen
 icon: mdi:fridge-outline
 cards:
-  # Temp
-  - type: sensor
-    entity: sensor.lumi_lumi_sens_975c1804_temperature
-    graph: line
 
-  # Hum
-  - type: sensor
-    entity: sensor.lumi_lumi_sens_975c1804_humidity
-    graph: line
+# Bedroom Temp & Hum   
+  - type: vertical-stack
+    cards:
+      - type: sensor
+        entity: sensor.kitchen_temp_temperature
+        graph: line
+      - type: sensor
+        entity: sensor.kitchen_temp_humidity
+        graph: line
 
   # Switches
   - type: entities  

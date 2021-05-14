@@ -4,59 +4,62 @@ icon: mdi:home
 cards:
  
 # Weather   
-  - type: weather-forecast
-    entity: weather.openweathermap
-    secondary_info_attribute: humidity
-  
-  - type: sensor
-    entity: sensor.openweathermap_pressure
-    graph: line 
+  - type: vertical-stack
+    cards:
+      - type: weather-forecast
+        entity: weather.openweathermap
+        secondary_info_attribute: humidity
+      - type: sensor
+        entity: sensor.openweathermap_pressure
+        graph: line
+      - type: sensor
+        entity: sensor.openweathermap_wind_speed
+        graph: line
     
-  - type: sensor
-    entity: sensor.openweathermap_wind_speed
-    graph: line 
-    
-#   - type: weather-forecast  
-#     entity: weather.home
-#     #show_forecast: true
+# Street Temp & Hum   
+  - type: vertical-stack
+    cards:
+      - type: sensor
+        entity: sensor.street_temp_temperature
+        graph: line
+      - type: sensor
+        entity: sensor.street_temp_humidity
+        graph: line
 
-  # Street Temp
-  - type: sensor
-    entity: sensor.temperature_158d0001b91127
-    graph: line 
+# Balcony Temp & Hum  
+  - type: vertical-stack
+    cards:
+      - type: sensor
+        entity: sensor.balcony_temp_temperature
+        graph: line
+      - type: sensor
+        entity: sensor.balcony_temp_humidity
+        graph: line
+        
+# Livingroom Temp & Hum  
+  - type: vertical-stack
+    cards:
+      - type: sensor
+        entity: sensor.3f59c880c04e_temperature
+        graph: line
+      - type: sensor
+        entity: sensor.3f59c880c04e_humidity
+        graph: line
 
-  # Street Hum
-  - type: sensor
-    entity: sensor.humidity_158d0001b91127
-    graph: line 
+# Gateway light & illumination   
+  - type: vertical-stack
+    cards:
+      - type: light
+        entity: light.gateway_light_34ce008141db
+      - type: entities
+        entities:
+        - sensor.illumination_34ce008141db
 
-# Livingroom Temp
-  - type: sensor
-    entity: sensor.mi_t_3f59c880c04e
-    graph: line
-# Livingroom Hum
-  - type: sensor
-    entity: sensor.mi_h_3f59c880c04e
-    graph: line
-
-  # Sun
-  - type: history-graph
-    title: sun
-    entities:
-    - entity: sun.sun    
-    
-  # Gateway light  
-  - type: light
-    entity: light.gateway_light_34ce008141db
-
-   # Gateway illumination   
-  - type: entities
-    entities:
-      - sensor.illumination_34ce008141db
-     
-#   # Gateway alarm     
-#   - type: alarm-panel
-#     entity: alarm_control_panel.xiaomi_miio_gateway_alarm
+#   # Sun
+#   - type: history-graph
+#     title: sun
+#     entities:
+#     - entity: sun.sun    
 
   # LG TV
   - type: media-control
@@ -81,16 +84,17 @@ cards:
       - switch.xiaomi_miio_switch
 # Switch for Street WiFi
       - switch.sonoff_1000d4b717_1
-# Street Lamp Socket
-      - switch.tz3000_vtscrpmw_ts0121_on_off
       
- # COVID   
-  - type: history-graph
-    title: covid
-    entities:
-    - entity: sensor.belarus_coronavirus_confirmed
-    - entity: sensor.belarus_coronavirus_current
-    - entity: sensor.belarus_coronavirus_deaths
-    hours_to_show: 2160
+# Street Lamp Socket
+      - switch.street_lamp_socket
+      
+# COVID   
+#   - type: history-graph
+#     title: covid
+#     entities:
+#     - entity: sensor.belarus_coronavirus_confirmed
+#     - entity: sensor.belarus_coronavirus_current
+#     - entity: sensor.belarus_coronavirus_deaths
+#     hours_to_show: 2160
 
 

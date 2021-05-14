@@ -47,5 +47,13 @@
 #     username: !secret reoKids_username
 #     password: !secret reoKids_password    
 
-
+  - platform: reolink_dev
+    host: 192.168.1.14 # Reolink E1 Pro
+    username: !secret reoKids_username
+    password: !secret reoKids_password
+    name: reoKids2
+    stream: main #main or sub (optional, default main)
+    protocol: rtsp # rtmp or rtsp (optional, default rtmp)
+    channel: 0 #NVR camera channel (optional, default 0)
+    scan_interval: 5 #(optional, default 30s)
   

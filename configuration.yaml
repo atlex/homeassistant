@@ -43,19 +43,19 @@ lovelace:
       type: js
 
 # Xiaomi Philips Ceiling LED
-light:
-  - platform: xiaomi_miio
-    name: Xiaomi Philips Ceiling LED
-    host: 192.168.1.10
-    token: !secret xiaomi_philips_ceiling_led_token
-    model: philips.light.ceiling
+# light:
+#   - platform: xiaomi_miio
+#     name: Xiaomi Philips Ceiling LED
+#     host: 192.168.1.10
+#     token: !secret xiaomi_philips_ceiling_led_token
+#     model: philips.light.ceiling
 
 # Xiaomi zimi powerstrip
-switch:
-  - platform: xiaomi_miio
-    host: 192.168.1.18
-    token: !secret xiaomi_zimi_powerstrip_token
-    model: zimi.powerstrip.v2
+# switch:
+#   - platform: xiaomi_miio
+#     host: 192.168.1.18
+#     token: !secret xiaomi_zimi_powerstrip_token
+#     model: zimi.powerstrip.v2
   
 # Telegram
 telegram_bot:

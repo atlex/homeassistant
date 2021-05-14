@@ -2,18 +2,17 @@ title: Kids
 path: kids
 icon: mdi:baby-carriage
 cards:
-  # Kids Temp
-  - type: sensor
-    #entity: sensor.temperature_158d00019f8776
-    entity: sensor.lumi_lumi_sens_76879f01_temperature
-    graph: line
-    
-  # Kids Humidity    
-  - type: sensor
-    #entity: sensor.humidity_158d00019f8776
-    entity: sensor.lumi_lumi_sens_76879f01_humidity
-    graph: line
-    
+
+# Kids Temp & Hum   
+  - type: vertical-stack
+    cards:
+      - type: sensor
+        entity: sensor.kids_temp_temperature
+        graph: line
+      - type: sensor
+        entity: sensor.kids_temp_humidity
+        graph: line
+
 # Kids ceiling light
   - type: vertical-stack
     cards:

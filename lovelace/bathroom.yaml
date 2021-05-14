@@ -2,25 +2,26 @@ title: Bathroom
 path: bathroom
 icon: mdi:shower-head
 cards:
-# Temp
-  - type: sensor
-    entity: sensor.lumi_lumi_sens_45cdb801_temperature
-    graph: line
 
-# Hum
-  - type: sensor
-    entity: sensor.lumi_lumi_sens_45cdb801_humidity
-    graph: line
-    
-# Temp2
-  - type: sensor
-    entity: sensor.lumi_lumi_sens_61140e04_temperature
-    graph: line
+# Bathroom Temp & Hum   
+  - type: vertical-stack
+    cards:
+      - type: sensor
+        entity: sensor.bathroom_temp_temperature
+        graph: line
+      - type: sensor
+        entity: sensor.bathroom_temp_humidity
+        graph: line
 
-# Hum2
-  - type: sensor
-    entity: sensor.lumi_lumi_sens_61140e04_humidity
-    graph: line
+# Bathroom2 Temp & Hum   
+  - type: vertical-stack
+    cards:
+      - type: sensor
+        entity: sensor.bathroom2_temp_temperature
+        graph: line
+      - type: sensor
+        entity: sensor.bathroom2_temp_humidity
+        graph: line
   
 # Sonoff
   - type: button   
@@ -30,12 +31,11 @@ cards:
   - type: entities  
     show_header_toggle: false
     entities:
-    #- entity: switch.36007448840d8e799d98
     - entity: switch.washmashinelocal
 
 # Water leak
   - type: history-graph
     title: Water leak
     entities:
-    - entity: binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone
+    - entity: binary_sensor.bathroom_water_leak_water_leak
 

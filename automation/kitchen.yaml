@@ -2,23 +2,23 @@
   alias: kitchen_hum_above
   trigger:
     platform: numeric_state
-    entity_id: sensor.humidity_158d00019d37b4
+    entity_id: sensor.kitchen_temp_humidity
     above: 70
   action:
     service: notify.Telegram
     data_template:
-      message: "Kitchen humidity is {{ states('sensor.humidity_158d00019d37b4') }}%."
+      message: "Kitchen humidity is {{ states('sensor.kitchen_temp_humidity') }}%."
 
 - id: kitchen_temp_below
   alias: kitchen_temp_below
   trigger:
     platform: numeric_state
-    entity_id: sensor.temperature_158d00019d37b4
+    entity_id: sensor.kitchen_temp_temperature
     below: 20
   action:
     service: notify.Telegram
     data_template:
-      message: "Kitchen temperature is {{ states('sensor.temperature_158d00019d37b4') }}%."
+      message: "Kitchen temperature is {{ states('sensor.kitchen_temp_temperature') }}%."
       
 - id: kitchen_fridge_off
   alias: kitchen_fridge_off

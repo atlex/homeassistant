@@ -80,13 +80,12 @@ switch.plug_158d00010dec94:
 switch.xiaomi_miio_switch:
   friendly_name: Xiaomi Zimi Powerstrip
 
+# Livingroom Temp
 # Xiaomi BLE Monitor sensor LYWSD02
-sensor.mi_h_3f59c880c04e:
-  friendly_name: Livingroom Humidity
-  device_class: humidity
-sensor.mi_t_3f59c880c04e:
+sensor.3f59c880c04e_temperature:
   friendly_name: Livingroom Temperature
-  device_class: temperature
+sensor.3f59c880c04e_humidity:
+  friendly_name: Livingroom Humidity
 
 # Alex phone
 device_tracker.sm_g965f:
@@ -212,14 +211,12 @@ sensor.daily_bedroom_desk_switch_day:
 sensor.monthly_bedroom_desk_switch_day:
   friendly_name: Bedroom Desk  
 
-
 # Aqara Bathroom Water leak sensor
 binary_sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_ias_zone:
   friendly_name: Bathroom water leak
   icon: mdi:water-outline
 sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_power:
   friendly_name: Bathroom Water leak battery
-  
   
 # Street Lamp Socket
 switch.tz3000_vtscrpmw_ts0121_on_off:

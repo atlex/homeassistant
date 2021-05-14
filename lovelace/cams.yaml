@@ -19,6 +19,18 @@ cards:
     camera_view: live 
     show_state: false
     
+  - type: picture-entity
+    entity: camera.reokids2
+    
+# camera_image: camera.reokids2
+# entities:
+#   - switch.camera_frontdoor_ir_lights
+#   - switch.camera_frontdoor_email
+#   - switch.camera_frontdoor_ftp
+#   - binary_sensor.motion_frontdoor
+# title: frontdoor
+# type: picture-glance
+    
   # Street Main
   - type: entities
     entities:

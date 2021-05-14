@@ -50,17 +50,19 @@ cards:
 # Batteries
   - type: entities
     entities:
-    - entity: sensor.158d0001b91127_battery
-    - entity: sensor.lumi_lumi_sens_76879f01_power
-    - entity: sensor.lumi_lumi_sens_69389d01_power # Badroom Temp
-    - entity: sensor.lumi_lumi_sens_45cdb801_power # Bathroom Temp
-    - entity: sensor.lumi_lumi_sens_61140e04_power # Bathroom2 Temp
-    - entity: sensor.158d0001640452_battery
-    - entity: sensor.158d0001b7585e_battery
-    - entity: sensor.158d0001b195a0_battery
-    - entity: sensor.lumi_lumi_sensor_motion_c508db01_power
-    - entity: sensor.lumi_lumi_sens_975c1804_power
-    - entity: sensor.lumi_lumi_sensor_wleak_aq1_d1f39b04_power
+    - entity: sensor.street_temp_battery # Street Temp
+    - entity: sensor.balcony_temp_battery # Balcony Temp
+    - entity: sensor.bathroom_temp_battery # Bathroom Temp
+    - entity: sensor.bathroom2_temp_battery # Bathroom2 Temp
+    - entity: sensor.bathroom_water_leak_battery # Bathroom Water Leak
+    - entity: sensor.158d0001b195a0_battery # Bathroom Fan button battery
+    - entity: sensor.kitchen_temp_battery # Kitchen Temp
+    - entity: sensor.kids_temp_battery # Kids Temp
+    - entity: sensor.158d0001640452_battery # Kids Switch battery
+    - entity: sensor.158d0001b7585e_battery # Front Door Sensor battery
+    - entity: sensor.bedroom_temp_battery # Bedroom Temp
+    - entity: sensor.bedroom_motion_battery # Bedroom Motion
+
   
   # Usage  
   - type: gauge 
@@ -109,27 +111,27 @@ cards:
 #     - entity: sensor.rt_ac68u_b_received
 #     - entity: sensor.rt_ac68u_b_sent
 
-  - type: history-graph
-    title: rpi power status
-    entities:
-    - entity: binary_sensor.rpi_power_status
+#   - type: history-graph
+#     title: rpi power status
+#     entities:
+#     - entity: binary_sensor.rpi_power_status
     
-  - type: 'custom:zha-network-card'
-    clickable: true
-    sort_by: available
-    columns:
-      - name: Name
-        prop: name
-      #- attr: rssi
-      #  name: RSSI
-      - attr: lqi
-        name: LQI
-      - attr: available
-        id: available
-        modify: x || "false"
-        name: Online
-      - attr: last_seen
-        name: Last Seen
+#   - type: 'custom:zha-network-card'
+#     clickable: true
+#     sort_by: available
+#     columns:
+#       - name: Name
+#         prop: name
+#       #- attr: rssi
+#       #  name: RSSI
+#       - attr: lqi
+#         name: LQI
+#       - attr: available
+#         id: available
+#         modify: x || "false"
+#         name: Online
+#       - attr: last_seen
+#         name: Last Seen
 
 
 

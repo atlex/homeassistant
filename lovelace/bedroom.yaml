@@ -3,15 +3,15 @@ path: bedroom
 icon: mdi:bed-empty
 cards:
 
-# Bedroom Temp
-  - type: sensor
-    entity: sensor.lumi_lumi_sens_69389d01_temperature
-    graph: line
-    
-# Bedroom Humidity    
-  - type: sensor
-    entity: sensor.lumi_lumi_sens_69389d01_humidity
-    graph: line
+# Bedroom Temp & Hum   
+  - type: vertical-stack
+    cards:
+      - type: sensor
+        entity: sensor.bedroom_temp_temperature
+        graph: line
+      - type: sensor
+        entity: sensor.bedroom_temp_humidity
+        graph: line
     
 # Bedroom lamp
   - type: button   
@@ -22,18 +22,25 @@ cards:
   - type: history-graph
     title: motion
     entities:
-    - entity: binary_sensor.lumi_lumi_sensor_motion_c508db01_occupancy
+    - entity: binary_sensor.bedroom_motion_occupancy
       name: occupancy
-    - entity: binary_sensor.lumi_lumi_sensor_motion_c508db01_ias_zone
-      name: zone
+    #- entity: binary_sensor.lumi_lumi_sensor_motion_c508db01_ias_zone
+    #  name: zone
       
 # Bedroom Desk Socket
   - type: entities  
     entities:
-    - entity: switch.tz3000_g5xawfcq_ts0121_f29613fe_on_off
+    - entity: switch.bedroom_desk_socket
     footer:
       type: graph
-      entity: sensor.tz3000_g5xawfcq_ts0121_f29613fe_electrical_measurement
+      entity: sensor.bedroom_desk_socket_energy
       hours_to_show: 24
       detail: 1
 
+# Bedroom Light Switch
+  - type: entities
+    entities:
+    - entity: switch.bedroom_light_switch_left
+    - entity: switch.bedroom_light_switch_right
+  
+  
